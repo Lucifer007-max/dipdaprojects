@@ -134,7 +134,7 @@ export default function Component() {
                 <motion.div
                   className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-lg inset-0 bg-gradient-to-t from-customOrange to-transparent opacity-1"
                   whileHover={{ scale: 1, zIndex: 50 }} // Desktop hover effect
-                  onTap={{ scale: 1.05, zIndex: 50 }} // Mobile tap effect
+                  // onTap={{ scale: 1.05, zIndex: 50 }} // Mobile tap effect
                   transition={{ duration: 1 }}
                   style={{ y }} // Apply the scroll-based Y-axis transform here
                 >
@@ -147,14 +147,14 @@ export default function Component() {
                   <motion.div
                     initial={{ opacity: 0, y: 100 }}
                     whileHover={{ opacity: 1, y: 0 }} // Desktop hover effect
-                    onTap={{ opacity: 1, y: 0 }} // Mobile tap effect
+                    // onTap={{ opacity: 1, y: 0 }} // Mobile tap effect
                     transition={{ duration: 0.3 }}
                     className="absolute inset-0 bg-gradient-to-t from-customOrange/90 p-6 flex flex-col justify-between"
                   >
                     <div className="space-y-4">
                       <motion.h3
                         whileHover={{ scale: 1.1 }} // Desktop hover effect
-                        onTap={{ scale: 1.1 }} // Mobile tap effect
+                        // onTap={{ scale: 1.1 }} // Mobile tap effect
                         className="text-dark text-3xl font-bold"
                       >
                         {project.title}
