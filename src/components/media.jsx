@@ -150,7 +150,7 @@ export default function Component() {
                 <motion.img
                   src={images[currentIndex]}
                   alt={`Event featuring ${artists[currentIndex].name}`}
-                  className="w-full h-full object-cover max-w-[80%] max-h-[80%]"
+                  className="w-full h-full object-cover max-w-[q00%] max-h-[100%]"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 />
@@ -161,7 +161,7 @@ export default function Component() {
         </div>
 
         {/* Navigation buttons */}
-        <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4" style={{ bottom: '52px' }}>
+        <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4" style={{ bottom: '25%' }}>
           <motion.button
             whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.2)" }}
             whileTap={{ scale: 0.9 }}
@@ -169,7 +169,7 @@ export default function Component() {
             onClick={prevSlide}
             aria-label="Previous slide"
           >
-            <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
+            <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 text-custom" />
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.2)" }}
@@ -178,7 +178,7 @@ export default function Component() {
             onClick={nextSlide}
             aria-label="Next slide"
           >
-            <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
+            <ChevronRight className="w-6 h-6 md:w-8 md:h-8 text-custom" />
           </motion.button>
         </div>
       </motion.div>
