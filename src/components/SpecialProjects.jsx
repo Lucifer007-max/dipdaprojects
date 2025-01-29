@@ -20,6 +20,9 @@ export default function Component() {
 
   const y = useTransform(scrollYProgress, [0, 1], [0, -200])
 
+  // const { scrollYProgress } = useScroll();
+  // const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
+
   const projects = [
     {
       title: "XRAY Analyzer",
@@ -118,8 +121,7 @@ export default function Component() {
 <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
   {/* Middle Background Layer */}
   {projects.map((project, index) => {
-    const { scrollYProgress } = useScroll();
-    const y = useTransform(scrollYProgress, [0, 1], [50, -50]); // Adjust the range to control movement
+   // Adjust the range to control movement
     
     return (
       <motion.div

@@ -130,7 +130,7 @@ export default function WillstarNavbar() {
                 {navLinks.map((link) => (
                   <motion.a
                     key={link}
-                    onClick={() => scrollToSection(link.toLowerCase().replace(' ', '-'))}
+                    onClick={() => navigteByURL(link.toLowerCase().replace(' ', '-'))}
                     className="text-3xl text-white/90 hover:text-white transition-colors cursor-pointer"
                   >
                     {link}
