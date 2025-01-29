@@ -87,7 +87,7 @@ body {
 }
 
 .loader {
-  @apply fixed inset-0 bg-dark z-50 flex items-center justify-center;
+  @apply fixed inset-0  z-50 flex items-center justify-center;
 }
 
 .loader-content {
