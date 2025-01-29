@@ -115,7 +115,7 @@ export default function WillstarNavbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 bg-black z-40 lg:hidden"
+            className="fixed inset-0 bg-white z-40 lg:hidden"
           >
             <div className="container mx-auto px-6 py-24 h-full flex flex-col">
               <motion.h2
@@ -131,7 +131,7 @@ export default function WillstarNavbar() {
                   <motion.a
                     key={link}
                     onClick={() => navigteByURL(link.toLowerCase().replace(' ', '-'))}
-                    className="text-3xl text-white/90 hover:text-white transition-colors cursor-pointer"
+                    className="text-3xl text-dark/90 hover:text-white transition-colors cursor-pointer"
                   >
                     {link}
                   </motion.a>

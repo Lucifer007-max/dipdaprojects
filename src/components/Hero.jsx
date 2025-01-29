@@ -141,7 +141,7 @@ const Hero = () => {
               }}
               className="text-custom text-4xl"
             >
-              <FaRocket />
+              {/* <FaRocket /> */}
             </motion.div>
           </div>
         </div>
@@ -188,7 +188,7 @@ const Hero = () => {
             className="max-w-4xl mx-auto text-lg leading-relaxed mb-20 text-dark"
           >
             <motion.h1
-              className="text-2xl md:text-6xl font-bold text-center mb-10 tracking-wider text-custom"
+              className="text-4xl md:text-6xl sm:text-4xl  lg:text-7xl  font-bold text-center mb-10 tracking-wider text-custom"
               style={{
                 WebkitTextStroke: '1px #b84e4a',
                 WebkitTextFillColor: 'transparent'
@@ -265,7 +265,7 @@ const Hero = () => {
           className="relative z-10 w-full"
         >
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-2 gap-x-8 gap-y-12">
+            <div className="grid grid-cols-1  lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-x-8 gap-y-12">
               {services.map((service, index) => (
                 <motion.div
                   key={index}
@@ -313,7 +313,7 @@ const Hero = () => {
       {/* Bottom Section */}
       <section className="py-20 bg-[#FCEEE8] ">
       <motion.h2
-            className="text-2xl sm:text-7xl md:text-7xl py-20  font-bold tracking-tighter leading-none text-center"
+            className="text-4xl md:text-6xl sm:text-4xl  lg:text-7xl  py-20  font-bold tracking-tighter leading-none text-center"
           >
             <motion.span
               initial={{ x: -100, opacity: 0 }}

@@ -30,7 +30,7 @@ export default function Component() {
   }
 
   return (
-    <div section id="media" className="min-h-screen text-white overflow-hidden">
+    <div section id="media" className="min-h-screen text-white">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -49,18 +49,18 @@ export default function Component() {
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="block"
+              className="block text-4xl md:text-6xl sm:text-4xl  lg:text-7xl "
             >
               OUR<motion.span
-              initial={{ y: "100%" }}
-              animate={{ y: 1}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="inline-block ml-2 md:ml-4"
-              style={{ WebkitTextStroke: '1px black', color: 'transparent' }}
-            >
-              TESTIMONIAL
+                initial={{ y: "100%" }}
+                animate={{ y: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-4xl md:text-6xl sm:text-4xl  lg:text-7xl  inline-block ml-2 md:ml-4"
+                style={{ WebkitTextStroke: '1px black', color: 'transparent' }}
+              >
+                TESTIMONIAL
+              </motion.span>
             </motion.span>
-            </motion.span>  
           </h1>
         </motion.div>
 
@@ -94,7 +94,7 @@ export default function Component() {
                   <div className="flex items-center space-x-4">
                     <span className="text-3xl md:text-4xl text-custom font-bold">#{artists[currentIndex].id}</span>
                     <div>
-                      <motion.h2 
+                      <motion.h2
                         className="text-xl md:text-2xl font-bold text-custom"
                         onHoverStart={() => setHoveredText(artists[currentIndex].name.split(' ')[0])}
                         onHoverEnd={() => setHoveredText('')}
@@ -104,7 +104,7 @@ export default function Component() {
                       >
                         {artists[currentIndex].name.split(' ')[0]}
                       </motion.h2>
-                      <motion.h2 
+                      <motion.h2
                         className="text-xl md:text-2xl font-bold text-custom"
                         onHoverStart={() => setHoveredText(artists[currentIndex].name.split(' ')[1])}
                         onHoverEnd={() => setHoveredText('')}
@@ -116,7 +116,7 @@ export default function Component() {
                       </motion.h2>
                     </div>
                   </div>
-                  <motion.p 
+                  <motion.p
                     className="text-lg md:text-xl text-gray-400"
                     onHoverStart={() => setHoveredText(artists[currentIndex].title)}
                     onHoverEnd={() => setHoveredText('')}
@@ -161,7 +161,7 @@ export default function Component() {
         </div>
 
         {/* Navigation buttons */}
-        <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4">
+        <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4" style={{ bottom: '52px' }}>
           <motion.button
             whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.2)" }}
             whileTap={{ scale: 0.9 }}

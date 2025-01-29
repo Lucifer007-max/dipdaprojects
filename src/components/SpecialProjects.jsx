@@ -18,7 +18,7 @@ export default function Component() {
     offset: ["start end", "end start"]
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, -200])
+  const y = useTransform(scrollYProgress, [0, 1], [0, -100])
 
   // const { scrollYProgress } = useScroll();
   // const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
@@ -98,7 +98,7 @@ export default function Component() {
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="inline-block"
+              className="inline-block text-4xl md:text-6xl sm:text-4xl  lg:text-7xl "
             >
               OUR
             </motion.span>
@@ -106,7 +106,7 @@ export default function Component() {
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="inline-block ml-2 md:ml-4"
+              className="inline-block ml-2 md:ml-4 text-4xl md:text-6xl sm:text-4xl  lg:text-7xl "
               style={{ WebkitTextStroke: '1px black', color: 'transparent' }}
             >
               PRODUCT
@@ -117,63 +117,67 @@ export default function Component() {
         {/* Card Layout */}
         {/* import { motion, useScroll, useTransform } from "framer-motion"; */}
 
-{/* Card Layout */}
-<div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-  {/* Middle Background Layer */}
-  {projects.map((project, index) => {
-   // Adjust the range to control movement
-    
-    return (
-      <motion.div
-        key={index}
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="relative group flex flex-col items-center "
-      >
-        <motion.div
-          className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-lg inset-0 bg-gradient-to-t from-customOrange to-transparent opacity-1"
-          whileHover={{ scale: 1, zIndex: 50 }}
-          transition={{ duration: 1 }}
-          style={{ y }} // Apply the scroll-based Y-axis transform here
-        >
-          <img
-            src={project.image}
-            alt={project.title}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+        {/* Card Layout */}
+        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          {/* Middle Background Layer */}
+          {projects.map((project, index) => {
+            // Adjust the range to control movement
 
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileHover={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="absolute inset-0 bg-gradient-to-t from-customOrange/90 p-6 flex flex-col justify-between"
-          >
-            <div className="space-y-4">
-              <motion.h3
-                whileHover={{ scale: 1.1 }}
-                className="text-dark text-3xl font-bold"
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                className="relative group flex flex-col items-center "
               >
-                {project.title}
-              </motion.h3>
-              <p className="text-dark">{project.description}</p>
-            </div>
+                <motion.div
+                  className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-lg inset-0 bg-gradient-to-t from-customOrange to-transparent opacity-1"
+                  whileHover={{ scale: 1, zIndex: 50 }} // Desktop hover effect
+                  onTap={{ scale: 1.05, zIndex: 50 }} // Mobile tap effect
+                  transition={{ duration: 1 }}
+                  style={{ y }} // Apply the scroll-based Y-axis transform here
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
 
-            <div className="space-y-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full px-6 py-3 bg-custom text-white rounded-lg font-medium"
-              >
-                View Service
-              </motion.button>
-            </div>
-          </motion.div>
-        </motion.div>
-      </motion.div>
-    );
-  })}
-</div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+                    whileHover={{ opacity: 1, y: 0 }} // Desktop hover effect
+                    onTap={{ opacity: 1, y: 0 }} // Mobile tap effect
+                    transition={{ duration: 0.3 }}
+                    className="absolute inset-0 bg-gradient-to-t from-customOrange/90 p-6 flex flex-col justify-between"
+                  >
+                    <div className="space-y-4">
+                      <motion.h3
+                        whileHover={{ scale: 1.1 }} // Desktop hover effect
+                        onTap={{ scale: 1.1 }} // Mobile tap effect
+                        className="text-dark text-3xl font-bold"
+                      >
+                        {project.title}
+                      </motion.h3>
+                      <p className="text-dark">{project.description}</p>
+                    </div>
+
+                    <div className="space-y-4">
+                      <motion.button
+                        whileHover={{ scale: 1.05 }} // Desktop hover effect
+                        whileTap={{ scale: 0.95 }} // Mobile tap effect
+                        className="w-full px-6 py-3 bg-custom text-white rounded-lg font-medium"
+                      >
+                        View Service
+                      </motion.button>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
+
+            );
+          })}
+        </div>
 
 
       </motion.div>
