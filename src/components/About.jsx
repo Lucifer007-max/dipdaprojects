@@ -85,16 +85,14 @@ const About = () => {
     { src: Oil, alt: "Oil & Gas", title: 'Oil & Gas' },
     { src: Iron, alt: "Iron & Steel", title: 'Iron & Steel' },
   ];
-  const yValues = useMemo(() => {
-    return images.map((_, index) =>
-      useTransform(
-        scrollYProgress,
-        [0, 1],
-        index % 2 === 0 ? ["0px", "50px"] : ["0px", "-50px"]
-      )
-    );
-  }, [images, scrollYProgress]);
-
+ 
+  const yValues = [
+    useTransform(scrollYProgress, [0, 1], ["0px", "50px"]), // Index 0 (even)
+    useTransform(scrollYProgress, [0, 1], ["0px", "-50px"]), // Index 1 (odd)
+    useTransform(scrollYProgress, [0, 1], ["0px", "50px"]), // Index 2 (even)
+    useTransform(scrollYProgress, [0, 1], ["0px", "-50px"]), // Index 3 (odd)
+    useTransform(scrollYProgress, [0, 1], ["0px", "50px"]), // Index 4 (even)
+  ];
 
   return (
     <section ref={sectionRef}>
