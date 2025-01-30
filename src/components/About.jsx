@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState, useMemo } from 'react'
 import { motion, useScroll, useTransform, useSpring, useInView, useAnimation } from 'framer-motion'
 import { Rocket, Users, Zap, CircleDot, CheckCircle, MoveRight, Clock } from 'lucide-react'
 import { GlowingCard } from './card/GlowingCard';
@@ -76,7 +76,7 @@ const About = () => {
     }
   }
   const letters = " ".split("")
-  const [yValues, setYValues] = useState([]);
+  // const [yValues, setYValues] = useState([]);
 
   const images = [
     { src: Cement, alt: "Cement", title: 'Cement' },
@@ -85,17 +85,16 @@ const About = () => {
     { src: Oil, alt: "Oil & Gas", title: 'Oil & Gas' },
     { src: Iron, alt: "Iron & Steel", title: 'Iron & Steel' },
   ];
-  // useEffect(() => {
-    // Precompute the y values for each image
-    const yTransforms = images.map((_, index) =>
+  const yValues = useMemo(() => {
+    return images.map((_, index) =>
       useTransform(
         scrollYProgress,
         [0, 1],
         index % 2 === 0 ? ["0px", "50px"] : ["0px", "-50px"]
       )
     );
-    // setYValues(yTransforms);
-  // }, [images, scrollYProgress]);
+  }, [images, scrollYProgress]);
+
 
   return (
     <section ref={sectionRef}>
@@ -234,7 +233,7 @@ const About = () => {
               return (
                 <motion.div
                   key={index}
-                  style={{ y: yTransforms[index] }}
+                  style={{ y: yValues[index] }}
                   className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] overflow-hidden rounded-lg shadow-lg"
                 >
                   <img
