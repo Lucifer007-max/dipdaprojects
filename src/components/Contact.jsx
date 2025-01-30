@@ -104,10 +104,10 @@ const Contact = () => {
                     type={field.type}
                     name={field.name}
                     required
-                    className="w-full bg-transparent border-b-2 border-gray-700 py-4 focus:border-primary transition-colors outline-none text-light peer"
+                    className="w-full bg-transparent border-b-2 border-gray-700 py-4 focus:border-primary transition-colors outline-none text-custom peer"
                     placeholder=" "
                   />
-                  <label className="absolute left-0 top-4 text-gray-500 transition-all peer-focus:-top-6 peer-focus:text-primary peer-focus:text-sm">
+                  <label className="absolute left-0 top-0 text-gray-500 transition-all peer-focus:-top-6 peer-focus:text-primary peer-focus:text-sm">
                     {field.label}
                   </label>
                 </motion.div>
@@ -122,10 +122,10 @@ const Contact = () => {
                 <textarea
                   name="message"
                   rows="4"
-                  className="w-full bg-transparent border-b-2 border-gray-700 py-4 focus:border-primary transition-colors outline-none resize-none text-light"
+                  className="w-full bg-transparent border-b-2 border-gray-700 py-4 focus:border-primary transition-colors outline-none resize-none text-custom"
                   placeholder=" "
                 />
-                <label className="absolute left-0 top-4 text-gray-500 transition-all peer-focus:-top-6 peer-focus:text-primary peer-focus:text-sm">
+                <label className="absolute left-0 top-0 text-gray-500 transition-all peer-focus:-top-6 peer-focus:text-primary peer-focus:text-sm">
                   Message Text
                 </label>
               </motion.div>
