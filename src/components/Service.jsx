@@ -24,7 +24,7 @@ const GlowingCard = ({ children, className, glowColor = "bg-white/20" }) => {
   )
 }
 
-export default function Component() {
+export default function Service() {
   const containerRef = useRef(null)
   const controls = useAnimation()
   const [ref, inView] = useInView({

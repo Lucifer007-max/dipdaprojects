@@ -3,13 +3,13 @@ import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Residents from './components/Residents';
-import Media from './components/media';
+// import Residents from './components/Residents';
+// import Media from './components/media';
 import Loading from './components/Loading';
-import SpecialProjects from './components/SpecialProjects';
-import Production from './components/Production';
-import Advertisement from './components/Advertisement';
-import Contact from './components/Contact';
+// import SpecialProjects from './components/Product';
+// import Production from './components/Service';
+// import Advertisement from './components/Advertisement';
+// import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './styles/globals.css';
 import './assets/fonts/fonts.css';
@@ -67,24 +67,24 @@ function App() {
           <BrowserRouter>
           <Navbar />
             <Routes>
-              <Route index path="/" key="home" element={<Hero />} />
-              <Route index path="/aobut" key="home" element={<About />} />
-              <Route path="/about" key="about" element={<About />} />
+              <Route index path="/home" key="home" element={<Hero />} />
+              <Route path="/about-us" key="about" element={<About />} />
+              {/* <Route path="/about" key="about" element={<AboutUs />} />
               <Route path="/contact" key="contact" element={<Contact />} />
-              <Route path="/service/xray-analyzer" key="xray-analyzer" element={<About />} />
-              <Route path="/service/pgnaa-analyzer" key="pgnaa-analyzer" element={<About />} />
-              <Route path="/product/xrf-sample-preperation-product" key="xrf-sample-preperation-product" element={<About />} />
+              <Route path="/service/xray-analyzer" key="xray-analyzer" element={<AboutUs />} />
+              <Route path="/service/pgnaa-analyzer" key="pgnaa-analyzer" element={<AboutUs />} />
+              <Route path="/product/xrf-sample-preperation-product" key="xrf-sample-preperation-product" element={<AboutUs />} /> */}
               {/* <Route path="/product/radiation-isotope-products" key="radiation-isotope-products" element={<XRF />} /> */}
 
-              <Route path="/training" key="training" element={<About />} />
-              <Route path="/network" key="network" element={<About />} />
+              {/* <Route path="/training" key="training" element={<AboutUs />} />
+              <Route path="/network" key="network" element={<AboutUs />} /> */}
             </Routes>
           </BrowserRouter>
 
           {/* <About /> */}
           {/* <Media /> */}
           {/* <Residents /> */}
-          <SpecialProjects />
+          {/* <SpecialProjects /> */}
           {/* <Production />
           <Advertisement /> */}
           {/* <Contact /> */}

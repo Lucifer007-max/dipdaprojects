@@ -10,6 +10,7 @@ import QualityVideo from '../assets/videos/quality_control.mp4'
 import radtion from '../assets/videos/radtion.mp4';
 import Media from './media';
 import { GlowingCard } from './card/GlowingCard';
+import Product from './Product';
 const Hero = () => {
   const sectionRef = useRef(null)
   const aboutUsRef = useRef(null)
@@ -312,27 +313,27 @@ const Hero = () => {
 
       {/* Bottom Section */}
       <section className="py-20 bg-[#FCEEE8] ">
-      <motion.h2
-            className="text-4xl md:text-6xl sm:text-4xl  lg:text-7xl  py-20  font-bold tracking-tighter leading-none text-center"
+        <motion.h2
+          className="text-4xl md:text-6xl sm:text-4xl  lg:text-7xl  py-20  font-bold tracking-tighter leading-none text-center"
+        >
+          <motion.span
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="inline-block text-dark"
           >
-            <motion.span
-              initial={{ x: -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="inline-block text-dark"
-            >
-              OUR
-            </motion.span>
-            <motion.span
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="inline-block ml-2 md:ml-4"
-              style={{ WebkitTextStroke: '1px black', color: 'transparent' }}
-            >
-              SERVICE
-            </motion.span>
-          </motion.h2>
+            OUR
+          </motion.span>
+          <motion.span
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="inline-block ml-2 md:ml-4"
+            style={{ WebkitTextStroke: '1px black', color: 'transparent' }}
+          >
+            SERVICE
+          </motion.span>
+        </motion.h2>
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -437,6 +438,7 @@ const Hero = () => {
       </section>
       {/* Testimonal */}
       <Media />
+      <Product />
     </>
 
   );

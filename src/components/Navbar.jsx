@@ -27,9 +27,8 @@ export default function WillstarNavbar() {
 
   const navigteByURL = (sectionId) => {
     console.log(sectionId)
-    // navigate(`/your-page#${sectionId}`);
+    navigate(`/${sectionId}`);
     setIsOpen(false);
-
   }
 
   const menuVariants = {
@@ -62,7 +61,7 @@ export default function WillstarNavbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <img src='https://www.geospectratech.com/images/logo.png' width={150} alt='logo' />
+              <img src='https://www.geospectratech.com/images/logo.png' width={110} alt='logo' />
             </motion.div>
           </a>
 
@@ -72,7 +71,7 @@ export default function WillstarNavbar() {
               <motion.a
                 key={link}
                 onClick={() => navigteByURL(link.toLowerCase().replace(' ', '-'))}
-                className="text-white/90 hover:text-white text-sm tracking-wider transition-colors cursor-pointer"
+                className="text-custom hover:text-dark text-sm tracking-wider transition-colors cursor-pointer"
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
               >

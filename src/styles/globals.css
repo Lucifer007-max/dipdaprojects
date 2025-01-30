@@ -103,3 +103,16 @@ body {
 .bg-custom {
   background-color: #b84e4a;
 }
+
+
+
+.counter-number {
+  /* font-size: 8rem !important; */
+  font-family: system-ui;
+  font-weight: bold;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #e57352;
+  -webkit-font-smoothing: antialiased;
+  /* text-rendering: optimizeLegibility; */
+  margin: 0;
+}

@@ -11,7 +11,7 @@ import project5 from '../assets/images/projects/davidoff-jpg-e1694747097761.webp
 import project6 from '../assets/images/projects/beluga-jpg-e1694747132112.webp'
 
 
-export default function Component() {
+export default function Product() {
   const containerRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
