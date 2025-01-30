@@ -1,29 +1,9 @@
 import React, { useRef, useEffect } from 'react'
 import { motion, useScroll, useTransform, useSpring, useInView, useAnimation } from 'framer-motion'
-import { Rocket, Users, Zap, CircleDot, CheckCircle, MoveRight, Share2, CalendarDays, FlagTriangleLeft, Eye, Download, Clock } from 'lucide-react'
+import { Rocket, Users, Zap, CircleDot, CheckCircle, MoveRight, Clock } from 'lucide-react'
+import { GlowingCard } from './card/GlowingCard';
 import mission from '../assets/images/backgrounds/experties.jpg';
-import ReactPlayer from 'react-player';
-import QualityVideo from '../assets/videos/quality_control.mp4'
-import radtion from '../assets/videos/radtion.mp4'
 import Breadcrumb from './Breadcrumb/Breadcrumb';
-const GlowingCard = ({ children, className, glowColor = "bg-white/20" }) => {
-  return (
-    <motion.div
-      className="relative group"
-      whileHover={{ scale: 1.05 }}
-      transition={{ type: "spring", stiffness: 300, damping: 10 }}
-    >
-      <motion.div
-        className={`absolute inset-0 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 ${glowColor}`}
-        initial={{ scale: 0.8 }}
-        whileHover={{ scale: 1.2 }}
-      />
-      <div className={`relative ${className}`}>
-        {children}
-      </div>
-    </motion.div>
-  )
-}
 import CountUp from "react-countup";
 import Map from '../assets/images/about/map.png'
 import Cement from "../assets/images/service/cement.jpg";
@@ -31,6 +11,7 @@ import Power from "../assets/images/service/power.jpg";
 import Mineral from "../assets/images/service/Mineral.jpg";
 import Oil from "../assets/images/service/Oil&gas.jpg";
 import Iron from "../assets/images/service/Iron.jpg";
+
 const About = () => {
   const sectionRef = useRef(null)
   const aboutUsRef = useRef(null)
@@ -43,7 +24,6 @@ const About = () => {
     offset: ["end start", "start end"], // Animation starts as section enters viewport
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, 200])
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 0])
 
   const scaleSpring = useSpring(1, { stiffness: 100, damping: 30 })
@@ -58,14 +38,6 @@ const About = () => {
     }
   }, [isInView, scaleSpring, controls])
 
-  const advantages = [
-    { icon: Rocket, title: 'Easy start', subtitle: 'newcomers to the media field' },
-    { icon: Users, title: 'high', subtitle: 'Media Rating' },
-    { icon: Zap, title: 'Bys Troe', subtitle: 'Promotion and development' },
-    { icon: CircleDot, title: 'Powerful', subtitle: 'PR campaign' },
-    { icon: CheckCircle, title: 'Found', subtitle: 'content creation resources' },
-    { icon: MoveRight, title: 'You move', subtitle: 'on large advertisers' }
-  ]
   const counters = [
     { id: 1, value: 25, label: "Years of Experience", icon: Rocket },
     { id: 2, value: 500, label: "Total Clients", icon: Users },
@@ -106,12 +78,13 @@ const About = () => {
   const letters = " ".split("")
 
   const images = [
-    { src: Cement, alt: "Red Fabric", title: 'Cement' },
-    { src: Power, alt: "Blue Fabric", title: 'Power' },
-    { src: Mineral, alt: "Yellow Fabric", title: 'Mineral' },
-    { src: Oil, alt: "Beige Fabric", title: 'Oil & Gas' },
-    { src: Iron, alt: "Brown Fabric", title: 'Iron & Steel' },
+    { src: Cement, alt: "Cement", title: 'Cement' },
+    { src: Power, alt: "Power", title: 'Power' },
+    { src: Mineral, alt: "Mineral", title: 'Mineral' },
+    { src: Oil, alt: "Oil & Gas", title: 'Oil & Gas' },
+    { src: Iron, alt: "Iron & Steel", title: 'Iron & Steel' },
   ];
+
   return (
     <section ref={sectionRef}>
       <motion.div className="relative container mx-auto px-4 pt-20" ref={aboutUsRef}>
@@ -222,27 +195,27 @@ const About = () => {
       <section ref={containerRef} className="relative  overflow-hidden bg-[#fef7f3]">
         <div className='py-10'></div>
         <div className='container mx-auto '>
-        <motion.h2
-          className="text-4xl md:text-6xl sm:text-4xl  lg:text-7xl  pb-10  font-bold tracking-tighter leading-none text-center"
-        >
-          <motion.span
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className="inline-block text-dark"
+          <motion.h2
+            className="text-4xl md:text-6xl sm:text-4xl  lg:text-7xl  pb-10  font-bold tracking-tighter leading-none text-center"
           >
-            OUR
-          </motion.span>
-          <motion.span
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="inline-block ml-2 md:ml-4"
-            style={{ WebkitTextStroke: '1px black', color: 'transparent' }}
-          >
-            FOCUS
-          </motion.span>
-        </motion.h2>
+            <motion.span
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="inline-block text-dark"
+            >
+              OUR
+            </motion.span>
+            <motion.span
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="inline-block ml-2 md:ml-4"
+              style={{ WebkitTextStroke: '1px black', color: 'transparent' }}
+            >
+              FOCUS
+            </motion.span>
+          </motion.h2>
           <div className="py-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 px-4 sm:px-8">
             {images.map((item, index) => {
               const y = useTransform(
@@ -402,7 +375,7 @@ const About = () => {
         >
           <div className="container mx-auto px-4 py-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
-            {services.map((service, index) => (
+              {services.map((service, index) => (
                 <motion.div
                   key={index}
                   className={`${service.gridClass}`}
