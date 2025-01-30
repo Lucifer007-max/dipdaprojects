@@ -4,15 +4,16 @@ import { Facebook, Instagram, Link, MessageCircle, Phone } from 'lucide-react'
 import { useNavigate } from 'react-router-dom';
 
 const navLinks = [
-  "HOME",
-  "ABOUT US",
-  "SERVICE",
-  "PRODUCT",
-  "TRANING",
-  "EXPERTISE",
-  "OUR NETWORK",
-  "CONTACT US"
+  { title: 'HOME', path: '' },
+  { title: 'ABOUT US', path: 'about-us' },
+  { title: 'SERVICE', path: 'service' },
+  { title: 'PRODUCT', path: 'product' },
+  { title: 'TRANING', path: 'traning' },
+  { title: 'EXPERTISE', path: 'expertise' },
+  { title: 'OUR NETWORK', path: 'our-network' },
+  { title: 'CONTACT US', path: 'contact-us' }
 ]
+
 
 export default function WillstarNavbar() {
   const navigate = useNavigate();
@@ -69,13 +70,13 @@ export default function WillstarNavbar() {
           <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <motion.a
-                key={link}
-                onClick={() => navigteByURL(link.toLowerCase().replace(' ', '-'))}
+                key={link.title}
+                onClick={() => navigteByURL(link.path.toLowerCase().replace(' ', '-'))}
                 className="text-custom hover:text-dark text-sm tracking-wider transition-colors cursor-pointer"
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
               >
-                {link}
+                {link.title}
               </motion.a>
             ))}
             <div className="flex items-center space-x-4 ml-8">
