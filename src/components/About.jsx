@@ -228,7 +228,7 @@ const About = () => {
               return (
                 <motion.div
                   key={index}
-                  style={{ y }}
+                  style={{ y: yTransforms[index] }} 
                   className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] overflow-hidden rounded-lg shadow-lg"
                 >
                   <img
