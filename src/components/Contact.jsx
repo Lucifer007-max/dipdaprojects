@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
+import Breadcrumb from './Breadcrumb/Breadcrumb';
 
 const Contact = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -10,10 +11,11 @@ const Contact = () => {
     { label: "E-mail*", name: "email", type: "email" },
   ];
 
-  const  contactInfo = [
-    { icon: <FaMapMarkerAlt />, text: "Office - Kievskaya 19" },
-    { icon: <FaPhone />, text: "+1 234 567 890" },
-    { icon: <FaEnvelope />, text: "hello@example.com" },
+  const contactInfo = [
+    { icon: <FaMapMarkerAlt />, text: "Office - PO Box 214634, Dubai, United Arab Emirates" },
+    { icon: <FaPhone />, text: "+971-4-3382153" },
+    { icon: <FaPhone />, text: "+971-567185064" },
+    { icon: <FaEnvelope />, text: "info@geospectratech.com" },
   ];
 
   const onSubmit = async (event) => {
@@ -46,8 +48,13 @@ const Contact = () => {
   };
 
   return (
-    <section id="contacts" className="min-h-screen bg-dark relative overflow-hidden py-20">
+    <section id="contacts" className="min-h-screen relative overflow-hidden py-20">
       {/* Background Animation */}
+      <div className='container mx-auto px-4 relative'>
+
+        <Breadcrumb title={'Contact Us'} />
+      </div>
+
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent" />
         <motion.div
@@ -67,14 +74,15 @@ const Contact = () => {
         />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.h1
+      <div className="container mx-auto px-4 relative z-10 py-20">
+        <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="font-syncopate text-4xl md:text-8xl font-bold mb-20 tracking-wider text-light"
+          className="font-syncopate text-4xl md:text-6xl sm:text-4xl lg:text-7xl font-bold mb-20 tracking-wider text-light"
+          style={{ WebkitTextStroke: '1px #b84e4a', color: 'transparent', fontFamily: 'system-ui' }}
         >
           CONTACT
-        </motion.h1>
+        </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-16">
           {/* Contact Form */}
@@ -126,7 +134,7 @@ const Contact = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-12 py-4 bg-primary text-light font-space-grotesk tracking-wider hover:bg-primary/90 transition-colors"
+                className="px-12 py-4 bg-custom text-light font-space-grotesk tracking-wider hover:bg-primary/90 transition-colors"
               >
                 Send
               </motion.button>
@@ -148,8 +156,8 @@ const Contact = () => {
                   transition={{ delay: index * 0.1 }}
                   className="flex items-center space-x-4 text-light"
                 >
-                  <span className="text-primary text-2xl">{info.icon}</span>
-                  <span className="font-outfit">{info.text}</span>
+                  <span className="text-custom text-2xl">{info.icon}</span>
+                  <span className="font-outfit text-dark">{info.text}</span>
                 </motion.div>
               ))}
             </div>
@@ -159,12 +167,17 @@ const Contact = () => {
               whileInView={{ opacity: 1 }}
               className="mt-12"
             >
-              <h4 className="text-xl font-bold text-light mb-4">Working Hours</h4>
+              <h4 className="text-xl font-bold text-dark mb-4">Working Hours</h4>
               <p className="text-gray-400 font-outfit">
                 Monday - Friday: 9:00 AM - 6:00 PM
               </p>
             </motion.div>
           </motion.div>
+
+
+          </div>
+          <div>
+            <iframe className='mt-5' src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1805.450547454451!2d55.25879161491412!3d25.172817251024316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDEwJzIyLjAiTiA1NcKwMTUnMzQuNCJF!5e0!3m2!1sen!2sin!4v1453974743604' allowfullscreen width="100%" height={"400px"} frameborder="0"/>
         </div>
       </div>
 

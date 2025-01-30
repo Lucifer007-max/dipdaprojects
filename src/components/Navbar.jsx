@@ -129,11 +129,11 @@ export default function WillstarNavbar() {
               <div className="flex flex-col space-y-6">
                 {navLinks.map((link) => (
                   <motion.a
-                    key={link}
-                    onClick={() => navigteByURL(link.toLowerCase().replace(' ', '-'))}
+                    key={link.title}
+                    onClick={() => navigteByURL(link.path.toLowerCase().replace(' ', '-'))}
                     className="text-3xl text-dark/90 hover:text-white transition-colors cursor-pointer"
                   >
-                    {link}
+                    {link.title}
                   </motion.a>
                 ))}
               </div>

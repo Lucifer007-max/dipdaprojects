@@ -9,7 +9,7 @@ import Loading from './components/Loading';
 // import SpecialProjects from './components/Product';
 // import Production from './components/Service';
 // import Advertisement from './components/Advertisement';
-// import Contact from './components/Contact';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './styles/globals.css';
 import './assets/fonts/fonts.css';
@@ -69,8 +69,8 @@ function App() {
             <Routes>
               <Route index path="/" key="home" element={<Hero />} />
               <Route path="/about-us" key="about" element={<About />} />
+              <Route path="/contact-us" key="contact" element={<Contact />} />
               {/* <Route path="/about" key="about" element={<AboutUs />} />
-              <Route path="/contact" key="contact" element={<Contact />} />
               <Route path="/service/xray-analyzer" key="xray-analyzer" element={<AboutUs />} />
               <Route path="/service/pgnaa-analyzer" key="pgnaa-analyzer" element={<AboutUs />} />
               <Route path="/product/xrf-sample-preperation-product" key="xrf-sample-preperation-product" element={<AboutUs />} /> */}
