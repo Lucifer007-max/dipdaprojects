@@ -84,13 +84,13 @@ const About = () => {
     { src: Oil, alt: "Oil & Gas", title: 'Oil & Gas' },
     { src: Iron, alt: "Iron & Steel", title: 'Iron & Steel' },
   ];
-  const yTransforms = images.map((item, index) =>
-    useTransform(
+  const transforms = images.map((item, index) => {
+    return useTransform(
       scrollYProgress,
       [0, 1],
       index % 2 === 0 ? ["0px", "50px"] : ["0px", "-50px"]
-    )
-  );
+    );
+  });
   return (
     <section ref={sectionRef}>
       <motion.div className="relative container mx-auto px-4 pt-20" ref={aboutUsRef}>
@@ -224,11 +224,12 @@ const About = () => {
           </motion.h2>
           <div className="py-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 px-4 sm:px-8">
             {images.map((item, index) => {
-             
+              const y = transforms[index]; // Get the y transform for this specific item
+
               return (
                 <motion.div
                   key={index}
-                  style={{ y: yTransforms[index] }} 
+                  style={{ y }}
                   className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] overflow-hidden rounded-lg shadow-lg"
                 >
                   <img
