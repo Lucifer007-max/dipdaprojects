@@ -18,11 +18,7 @@ const About = () => {
   const isInView = useInView(sectionRef, { once: false, amount: 0.1 })
   const controls = useAnimation()
   const containerRef = useRef(null);
-  const y = useTransform(
-    scrollYProgress,
-    [0, 1],
-    index % 2 === 0 ? ["0px", "50px"] : ["0px", "-50px"]
-  );
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["end start", "start end"], // Animation starts as section enters viewport
@@ -88,7 +84,13 @@ const About = () => {
     { src: Oil, alt: "Oil & Gas", title: 'Oil & Gas' },
     { src: Iron, alt: "Iron & Steel", title: 'Iron & Steel' },
   ];
-
+  const yTransforms = images.map((item, index) =>
+    useTransform(
+      scrollYProgress,
+      [0, 1],
+      index % 2 === 0 ? ["0px", "50px"] : ["0px", "-50px"]
+    )
+  );
   return (
     <section ref={sectionRef}>
       <motion.div className="relative container mx-auto px-4 pt-20" ref={aboutUsRef}>
@@ -222,8 +224,7 @@ const About = () => {
           </motion.h2>
           <div className="py-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 px-4 sm:px-8">
             {images.map((item, index) => {
-
-
+             
               return (
                 <motion.div
                   key={index}
