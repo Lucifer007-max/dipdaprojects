@@ -40,6 +40,45 @@ const NetWork = () => {
             <section className="relative container mx-auto px-4 pt-20">
 
                 <Breadcrumb title={'Our Network'} />
+                <motion.section
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1 }}
+                    className="space-y-6 py-20">
+                    <div className="border-l-4 border-red-500 pl-3">
+                        <motion.h2
+                            className="text-4xl md:text-6xl sm:text-4xl  lg:text-5xl  font-bold tracking-tighter leading-none "
+                        >
+                            <motion.span
+                                initial={{ x: -100, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
+                                transition={{ duration: 0.8 }}
+                                className="inline-block text-dark"
+                            >
+                                OUR
+                            </motion.span>
+                            <motion.span
+                                initial={{ x: 100, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                className="inline-block ml-2 md:ml-4"
+                                style={{ WebkitTextStroke: '1px black', color: 'transparent' }}
+                            >
+                                NETWORK
+                            </motion.span>
+                        </motion.h2>
+                    </div>
+                    <motion.p
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.1 }} className="text-gray-600 leading-relaxed">
+                        At Spectra, we take pride in our extensive geographical presence, delivering top-tier services across multiple regions. Our expertise spans North Africa, the Middle East, and South Asia, ensuring our clients receive tailored solutions backed by industry-leading experience.
+
+                        We are actively engaged in Algeria, Egypt, Jordan, Nigeria, Lebanon, Ethiopia, Morocco, Yemen, Oman, Libya, Pakistan, Saudi Arabia, Senegal, Qatar, Tanzania, Tunisia, Turkey, South Africa, UAE, India, Zambia, and Turkmenistan. Through our robust network and strategic partnerships, we bring cutting-edge solutions to these regions, addressing diverse market needs and industry challenges.
+
+
+                    </motion.p>
+                </motion.section>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 py-20 gap-6">
                     {jsonData.features.map((feature, index) => (
 

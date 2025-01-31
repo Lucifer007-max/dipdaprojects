@@ -52,3 +52,26 @@ export const jsonData = {
     { "type": "Feature", "properties": { "id": "TM", "name": "Turkmenistan" }, "geometry": { "type": "Point", "coordinates": [59.5880, 38.9697] } }
   ]
 }
+
+
+export const Gammaexperties = [
+  "Comprehensive Product and Maintenance Support.",
+  "Performance Evaluation and Optimization Support.",
+  "Static & Dynamic Calibration Support.",
+  "Process control & Integration Solution using PGNAA system to plant network.",
+  "Radioactive Source Replenishment & Support.",
+  "Consumable & Spares Support.",
+  "Data Integration with other Lab systems & database management.",
+  "Endless support to your old or new system.",
+  "Expert advice and consulting on new and existing systems."
+];
+
+
+export const Xraysexperties = [
+  "Comprehensive Product and Maintenance Support.",
+  "Performance Evaluation and Optimization Support.",
+  "Complete Calibration Support.",
+  "Process control & Integration Solution using X-ray and PGNAA system integration.",
+  "Consumable & Spares Support.",
+  "Data Integration with other Lab systems & database management."
+];

@@ -14,7 +14,8 @@ import Footer from './components/Footer';
 import './styles/globals.css';
 import './assets/fonts/fonts.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import NetWork from './components/Newwork';
+import NetWork from './components/Network';
+import Expertise from './components/Expertise';
 // import
 function App() {
   const [loading, setLoading] = useState(true);
@@ -72,6 +73,7 @@ function App() {
               <Route path="/about-us" key="about" element={<About />} />
               <Route path="/contact-us" key="contact" element={<Contact />} />
               <Route path="/our-network" key="network" element={<NetWork />} />
+              <Route path="/expertise" key="expertise" element={<Expertise />} />
               {/* <Route path="/about" key="about" element={<AboutUs />} />
               <Route path="/service/xray-analyzer" key="xray-analyzer" element={<AboutUs />} />
               <Route path="/service/pgnaa-analyzer" key="pgnaa-analyzer" element={<AboutUs />} />

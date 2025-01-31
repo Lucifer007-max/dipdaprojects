@@ -150,7 +150,7 @@ export default function Component() {
                 <motion.img
                   src={images[currentIndex]}
                   alt={`Event featuring ${artists[currentIndex].name}`}
-                  className="w-full h-full object-cover max-w-[q00%] max-h-[100%]"
+                  className="w-full h-full object-cover max-w-[90%] max-h-[100%]"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 />
