@@ -17,6 +17,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NetWork from './components/Network';
 import Expertise from './components/Expertise';
 import Training from './components/Training';
+import Service from './components/Service';
 // import
 function App() {
   const [loading, setLoading] = useState(true);
@@ -76,6 +77,7 @@ function App() {
               <Route path="/our-network" key="network" element={<NetWork />} />
               <Route path="/expertise" key="expertise" element={<Expertise />} />
               <Route path="/training" key="expertise" element={<Training />} />
+              <Route path="/service" key="expertise" element={<Service />} />
               {/* <Route path="/about" key="about" element={<AboutUs />} />
               <Route path="/service/xray-analyzer" key="xray-analyzer" element={<AboutUs />} />
               <Route path="/service/pgnaa-analyzer" key="pgnaa-analyzer" element={<AboutUs />} />

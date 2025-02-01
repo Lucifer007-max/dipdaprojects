@@ -11,7 +11,8 @@ import Power from "../assets/images/service/power.jpg";
 import Mineral from "../assets/images/service/Mineral.jpg";
 import Oil from "../assets/images/service/Oil&gas.jpg";
 import Iron from "../assets/images/service/Iron.jpg";
-
+import Legal from '../assets/images/about/legal.jpg'
+import royal from '../assets/images/about/royality.jpg'
 const About = () => {
   const sectionRef = useRef(null)
   const aboutUsRef = useRef(null)
@@ -84,8 +85,8 @@ const About = () => {
     { src: Mineral, alt: "Mineral", title: 'Mineral' },
     { src: Oil, alt: "Oil & Gas", title: 'Oil & Gas' },
     { src: Iron, alt: "Iron & Steel", title: 'Iron & Steel' },
-    { src: Iron, alt: "Iron & Steel", title: 'Iron & Steel' },
-    { src: Iron, alt: "Iron & Steel", title: 'Iron & Steel' },
+    { src: Legal, alt: "Our Legality", title: 'Our Legality' },
+    { src: royal, alt: "Our Royality", title: 'Our Royality' },
   ];
  
   const yValues = [

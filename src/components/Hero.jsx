@@ -197,11 +197,12 @@ const Hero = () => {
             // className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r text-custom"
             // style={{ scale: scaleSpring }}
             >
-              WHO WE ARE 
+              WHO WE ARE
             </motion.h1>
             <p>
               Spectra Line Industrial LLC and GeoSpectra Technical Services LLC, with offices in Dubai, UAE, specialize in providing high-end, cost-effective technical solutions and services across a range of industries, including Cement & Coal, Iron & Steel, Oil & Gas, and Minerals. They offer dedicated technical support for analytical instruments such as XRF, XRD, and OES analyzers, as well as Gamma-ray on-line analyzers like PGNAA systems (e.g., Gamma-Metrics, Geoscan). Their services also extend to radiation technology, including the supply of radioactive isotopes, radiation services, and radioactive waste management, along with expert training and application support in mission-critical environments.
             </p>
+           
           </motion.div>
         </div>
       </section>
@@ -346,8 +347,18 @@ const Hero = () => {
                 ANALYTICAL PROCESS & QUALITY CONTROL
               </h3>
               <p className="text-dark">
-                Analytical processes and quality control play a vital role in ensuring precision and reliability across various industries. Leveraging advanced technologies such as X-ray Fluorescence (XRF) Analyzers, organizations can perform non-destructive elemental analysis with high accuracy.
+                In the field of scientific analysis, ensuring the highest level of accuracy and consistency is paramount. The use of advanced analytical instruments plays a crucial role in maintaining quality control and enhancing the efficiency of processes. Technologies such as X-ray Fluorescence (XRF) Analyzers, X-ray Diffraction (XRD) Analyzers, Optical Emission Spectrometers (OES), and Lab Automation & Networking are pivotal in streamlining analytical processes across various industries, including materials science, mining, metallurgy, pharmaceuticals, and environmental monitoring.
               </p>
+              <motion.button
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
+              whileHover={{ scale: 1.05 }}
+              className="px-8 py-4 border border-customOrange/50 text-dark font-orbitron inline-flex items-center gap-3 group hover:bg-customOrange/10"
+            >
+              Know More
+              <FaPlay className="group-hover:scale-110 transition-transform" />
+            </motion.button>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -430,8 +441,18 @@ const Hero = () => {
                 RADIATION SERVICES & PRODUCTS SUPPORT
               </h3>
               <p className="text-dark">
-                Our company offers comprehensive Radiation Services & Products Support to meet the needs of industries working with radioactive materials. Our Professional Consultancy services provide expert guidance to ensure compliance with regulatory standards and the safe use of radiation technologies.
+              Radiation-based technologies play a critical role in a variety of industries, from healthcare and research to energy and manufacturing. However, with the use of radioactive materials comes the responsibility of ensuring safety, compliance with regulations, and proper handling. Our Radiation Services & Products Support offers a range of professional services to assist businesses and organizations in managing their radiation needs effectively and safely. These services include Professional Consultancy, Radioactive Waste Management, and Radioisotope Supply & Installation, all designed to support the safe and efficient use of radioactive materials.
               </p>
+              <motion.button
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
+              whileHover={{ scale: 1.05 }}
+              className="px-8 py-4 border border-customOrange/50 text-dark font-orbitron inline-flex items-center gap-3 group hover:bg-customOrange/10"
+            >
+              Know More
+              <FaPlay className="group-hover:scale-110 transition-transform" />
+            </motion.button>
             </motion.div>
           </div>
         </div>

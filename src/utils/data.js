@@ -1,5 +1,10 @@
 import { Eye, FlagTriangleLeft } from "lucide-react";
-
+import time from '../assets/images/product/247.jpg'
+import ENG from "../assets/images/product/dedicated.jpg"
+import Traning from "../assets/images/product/training.jpg"
+import aggrement from '../assets/images/product/aggrement.jpg'
+import validation from '../assets/images/product/Validation.jpg'
+import Radioactive from '../assets/images/product/Radioactive.jpg'
 export const services = [
 
   {
@@ -84,7 +89,7 @@ export const Xraysexperties = [
 
 
 
-export const dataList =[
+export const dataList = [
   { "countryName": "Algeria", "locationLatitude": 36.7538, "locationLongitude": 3.0588 },
   { "countryName": "Egypt", "locationLatitude": 30.0444, "locationLongitude": 31.2357 },
   { "countryName": "Jordan", "locationLatitude": 31.9634, "locationLongitude": 35.9304 },
@@ -108,3 +113,43 @@ export const dataList =[
   { "countryName": "Zambia", "locationLatitude": -13.1339, "locationLongitude": 27.8493 },
   { "countryName": "Turkmenistan", "locationLatitude": 38.9697, "locationLongitude": 59.5880 }
 ]
+
+
+export const servicesList = [
+  {
+    title: "Dedicated Support Engineer",
+    description:
+      "We assign a dedicated engineer to each site & system to ensure round-the-clock support availability.",
+    img: ENG,
+  },
+  {
+    title: "24x7 Remote Support",
+    description:
+      "We provide 24x7 remote assistance to your team through phone, email, and website.",
+    img: time,
+  },
+  {
+    title: "On-Job Training",
+    description:
+      "Your team will become self-sufficient and capable enough to handle emergency repairs and routine maintenance.",
+    img: Traning,
+  },
+  {
+    title: "Maintenance & Support Agreement",
+    description:
+      "We provide cost-effective Maintenance Agreement packages with various multi-layered support options.",
+    img: aggrement,
+  },
+  {
+    title: "Periodic System Validation",
+    description:
+      "We conduct complete system validation at a competitive price to ensure optimal performance.",
+    img: validation,
+  },
+  {
+    title: "Radioactive Source Supply",
+    description:
+      "We support and operate existing PGNAA systems, including radioactive source replenishment.",
+    img: Radioactive
+  },
+];

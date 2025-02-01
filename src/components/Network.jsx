@@ -44,8 +44,24 @@ const NetWork = () => {
     const zoom = 3;
     const [map, setMap] = useState(null);
 
+
+
+    const borderAnimation = {
+        initial: { borderColor: "rgba(255, 255, 255, 0)" },
+        animate: {
+            borderColor: "rgba(255, 255, 255, 1)",
+            transition: {
+                duration: 2,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut",
+            },
+        },
+    };
+
     return (
         <>
+
             <section className="relative container mx-auto px-4 pt-20">
 
                 <Breadcrumb title={'Our Network'} />
@@ -88,59 +104,51 @@ const NetWork = () => {
 
                     </motion.p>
                 </motion.section>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 py-20 gap-6">
-                    {jsonData.features.map((feature, index) => (
 
-                        <motion.div
+            </section>
+            <div className=" bg-custom ">
+                <div className='relative container flex-1 grid grid-cols-1 px-3 sm:grid-cols-3 lg:grid-cols-5 gap-2 py-20 relative mx-auto'>
+                    {dataList.map((region, index) => (
+                        <div
                             key={index}
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            className="group bg-white/10 relative backdrop-blur-sm rounded-lg p-2 border border-white/10 hover:border-white/20 transition-all duration-300 shadow-lg hover:shadow-xl"
-
+                            className="relative flex items-center justify-center text-white text-xl font-bold p-6 border border-white overflow-hidden transition-all duration-300 hover:bg-white hover:text-black"
+                            style={{ height: '200px' }}
                         >
-                            {/* Card Content */}
+                            {region.countryName}
+                            {/* Animated Border Line */}
                             <motion.div
-                                className="text-xl md:text-2xl font-bold mb-3"
-                                whileHover={{ y: -10 }}
-                                style={{ color: feature.color }}
-                            >
-                                <img width="100%"
-                                    src={`/flags/${feature.properties.id.toLowerCase()}.svg`}
-                                    alt={`${feature.properties.name.countryCode} Flag`}
-                                    style={{ height: '150px', objectFit: 'cover' }} />
-                                {/* {feature.title} */}
-                                <motion.div
-                                    initial={{ opacity: 0, y: 50 }}
-                                    whileHover={{ opacity: 1, y: 0 }} // Desktop hover effect
-                                    // whileInView={{ opacity: 1, y: 0 }} // Mobile auto-reveal
-                                    transition={{ duration: 0.4 }}
-                                    className="absolute inset-0 bg-gradient-to-t from-customOrange/60  p-6 flex flex-col justify-center"
-                                >
-                                    <motion.h3
-                                        whileHover={{ scale: 1.1 }}
-                                        className="text-white text-lg sm:text-xl font-bold text-center"
-                                    >
-                                        {feature.properties.name}
-                                    </motion.h3>
-                                </motion.div>
-                            </motion.div>
-
-                            {/* Divider with Hover Effect */}
-                            <motion.div
-                                className="h-0.5 bg-gradient-to-r from-transparent via-white/20 to-transparent mt-4 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                                className="absolute inset-0 border border-white"
+                                initial={{ clipPath: "inset(0% 100% 100% 0%)" }}
+                                animate={{
+                                    clipPath: [
+                                        "inset(0% 100% 100% 0%)",
+                                        "inset(0% 0% 100% 0%)",
+                                        "inset(0% 0% 0% 0%)",
+                                        "inset(100% 0% 0% 0%)",
+                                        "inset(100% 100% 0% 0%)",
+                                        "inset(0% 100% 0% 0%)",
+                                        "inset(0% 100% 100% 0%)",
+                                    ],
+                                }}
+                                transition={{
+                                    duration: 3,
+                                    repeat: Infinity,
+                                    ease: "linear",
+                                }}
                             />
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
-                <div className='pb-20'>
+            </div>
+
+            <div className='py-20'>
 
                 <MapContainer
                     center={{ lat: 9.145, lng: 38.7369 }}
                     zoom={zoom}
                     scrollWheelZoom={true}
                     ref={setMap}
-                    style={{ width: "500", height: "400px", zIndex:9 }}
+                    style={{ width: "500", height: "400px", zIndex: 9 }}
                 >
                     <TileLayer
                         attribution='&copy; <a href="#">SPECTRA</a> contributors'
@@ -220,9 +228,7 @@ const NetWork = () => {
                     </>
                     {/* )} */}
                 </MapContainer>
-                </div>
-            </section>
-
+            </div>
         </>
     )
 }

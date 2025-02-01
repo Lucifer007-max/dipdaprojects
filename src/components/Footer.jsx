@@ -30,7 +30,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-custom border-t border-light-800">
+    <footer className="bg-footer border-t border-light-800">
       <div className="container mx-auto px-4 py-20">
         {/* Top Section */}
         <div className="grid md:grid-cols-2 gap-12 mb-16 place-items-center">
