@@ -1,7 +1,7 @@
 import { motion, useAnimation, useInView, useScroll, useSpring, useTransform } from 'framer-motion';
 import ReactPlayer from 'react-player';
 import { FaArrowRight, FaPlay, FaRocket } from 'react-icons/fa';
-import video from '../assets/videos/banner.mp4';
+import video from '../assets/videos/banner1.mp4';
 import { services } from '../utils/data';
 import { itemAnimation, letterAnimation } from '../utils/animation';
 import { useEffect, useRef } from 'react';
