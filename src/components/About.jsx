@@ -84,6 +84,8 @@ const About = () => {
     { src: Mineral, alt: "Mineral", title: 'Mineral' },
     { src: Oil, alt: "Oil & Gas", title: 'Oil & Gas' },
     { src: Iron, alt: "Iron & Steel", title: 'Iron & Steel' },
+    { src: Iron, alt: "Iron & Steel", title: 'Iron & Steel' },
+    { src: Iron, alt: "Iron & Steel", title: 'Iron & Steel' },
   ];
  
   const yValues = [
@@ -91,6 +93,8 @@ const About = () => {
     useTransform(scrollYProgress, [0, 1], ["0px", "-50px"]), // Index 1 (odd)
     useTransform(scrollYProgress, [0, 1], ["0px", "50px"]), // Index 2 (even)
     useTransform(scrollYProgress, [0, 1], ["0px", "-50px"]), // Index 3 (odd)
+    useTransform(scrollYProgress, [0, 1], ["0px", "50px"]), // Index 4 (even)
+    useTransform(scrollYProgress, [0, 1], ["0px", "-50px"]), // Index 4 (even)
     useTransform(scrollYProgress, [0, 1], ["0px", "50px"]), // Index 4 (even)
   ];
 
@@ -225,7 +229,7 @@ const About = () => {
               FOCUS
             </motion.span>
           </motion.h2>
-          <div className="py-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 px-4 sm:px-8">
+          <div className="py-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6 px-4 sm:px-8">
             {images.map((item, index) => {
 
               return (

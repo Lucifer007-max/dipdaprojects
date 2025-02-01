@@ -197,7 +197,7 @@ const Hero = () => {
             // className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r text-custom"
             // style={{ scale: scaleSpring }}
             >
-              WHO WE ARE ?
+              WHO WE ARE 
             </motion.h1>
             <p>
               Spectra Line Industrial LLC and GeoSpectra Technical Services LLC, with offices in Dubai, UAE, specialize in providing high-end, cost-effective technical solutions and services across a range of industries, including Cement & Coal, Iron & Steel, Oil & Gas, and Minerals. They offer dedicated technical support for analytical instruments such as XRF, XRD, and OES analyzers, as well as Gamma-ray on-line analyzers like PGNAA systems (e.g., Gamma-Metrics, Geoscan). Their services also extend to radiation technology, including the supply of radioactive isotopes, radiation services, and radioactive waste management, along with expert training and application support in mission-critical environments.

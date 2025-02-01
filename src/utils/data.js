@@ -66,6 +66,12 @@ export const Gammaexperties = [
   "Expert advice and consulting on new and existing systems."
 ];
 
+export const Experties = [
+  "We conduct dedicated ON-SITE user training programs at plant site ON CUSTOMER SYSTEMS and provide advance Operation, maintenance and troubleshooting training specific to your PGNAA and/or X-ray analyzers.",
+  "Periodically, we also conduct OFF-SITE training programs on PGNAA and X-ray analyzer systems maintenance and troubleshooting at various locations. An enquiry can be sent to us directly or thru our website.",
+  "Eventually with our training programs, most customers are able to bypass expensive maintenance agreement of OEMs and can easily operate & troubleshoot the analyzer systems at much less cost and better capabilities."
+
+]
 
 export const Xraysexperties = [
   "Comprehensive Product and Maintenance Support.",
@@ -75,3 +81,30 @@ export const Xraysexperties = [
   "Consumable & Spares Support.",
   "Data Integration with other Lab systems & database management."
 ];
+
+
+
+export const dataList =[
+  { "countryName": "Algeria", "locationLatitude": 36.7538, "locationLongitude": 3.0588 },
+  { "countryName": "Egypt", "locationLatitude": 30.0444, "locationLongitude": 31.2357 },
+  { "countryName": "Jordan", "locationLatitude": 31.9634, "locationLongitude": 35.9304 },
+  { "countryName": "Nigeria", "locationLatitude": 7.4951, "locationLongitude": 9.0575 },
+  { "countryName": "Lebanon", "locationLatitude": 33.8869, "locationLongitude": 35.8497 },
+  { "countryName": "Ethiopia", "locationLatitude": 9.145, "locationLongitude": 38.7369 },
+  { "countryName": "Morocco", "locationLatitude": 31.7917, "locationLongitude": -7.0926 },
+  { "countryName": "Yemen", "locationLatitude": 15.5521, "locationLongitude": 48.5164 },
+  { "countryName": "Oman", "locationLatitude": 23.5854, "locationLongitude": 55.3137 },
+  { "countryName": "Libya", "locationLatitude": 32.8797, "locationLongitude": 13.1924 },
+  { "countryName": "Pakistan", "locationLatitude": 31.5204, "locationLongitude": 74.3587 },
+  { "countryName": "Saudi Arabia", "locationLatitude": 24.7136, "locationLongitude": 46.6753 },
+  { "countryName": "Senegal", "locationLatitude": 14.6928, "locationLongitude": -14.6928 },
+  { "countryName": "Qatar", "locationLatitude": 25.276987, "locationLongitude": 51.1839 },
+  { "countryName": "Tanzania", "locationLatitude": -6.1659, "locationLongitude": 39.2026 },
+  { "countryName": "Tunisia", "locationLatitude": 33.8869, "locationLongitude": 9.5375 },
+  { "countryName": "Turkey", "locationLatitude": 39.9334, "locationLongitude": 35.2433 },
+  { "countryName": "South Africa", "locationLatitude": -29.0189, "locationLongitude": 24.7135 },
+  { "countryName": "UAE", "locationLatitude": 23.4241, "locationLongitude": 55.2983 },
+  { "countryName": "India", "locationLatitude": 20.5937, "locationLongitude": 78.9629 },
+  { "countryName": "Zambia", "locationLatitude": -13.1339, "locationLongitude": 27.8493 },
+  { "countryName": "Turkmenistan", "locationLatitude": 38.9697, "locationLongitude": 59.5880 }
+]

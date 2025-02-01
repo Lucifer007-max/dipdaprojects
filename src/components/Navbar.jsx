@@ -8,7 +8,7 @@ const navLinks = [
   { title: 'ABOUT US', path: 'about-us' },
   { title: 'SERVICE', path: 'service' },
   { title: 'PRODUCT', path: 'product' },
-  { title: 'TRANING', path: 'traning' },
+  { title: 'TRAINING', path: 'training' },
   { title: 'EXPERTISE', path: 'expertise' },
   { title: 'OUR NETWORK', path: 'our-network' },
   { title: 'CONTACT US', path: 'contact-us' }

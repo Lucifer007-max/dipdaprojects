@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Breadcrumb from './Breadcrumb/Breadcrumb';
-import { jsonData } from '../utils/data';
+import { dataList, jsonData } from '../utils/data';
+import { MapContainer, Popup, TileLayer } from "react-leaflet";
+import { Marker } from "react-leaflet/Marker";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 const NetWork = () => {
+    const sourceId = "places";
+    const symbolLayerId = "symbols";
     const features = [
         {
             title: "Creative and thoughtful approach",
@@ -35,6 +41,9 @@ const NetWork = () => {
             color: "#2D82B7"
         }
     ];
+    const zoom = 3;
+    const [map, setMap] = useState(null);
+
     return (
         <>
             <section className="relative container mx-auto px-4 pt-20">
@@ -123,6 +132,94 @@ const NetWork = () => {
                             />
                         </motion.div>
                     ))}
+                </div>
+                <div className='pb-20'>
+
+                <MapContainer
+                    center={{ lat: 9.145, lng: 38.7369 }}
+                    zoom={zoom}
+                    scrollWheelZoom={true}
+                    ref={setMap}
+                    style={{ width: "500", height: "400px", zIndex:9 }}
+                >
+                    <TileLayer
+                        attribution='&copy; <a href="#">SPECTRA</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                    {/* {loading ? (
+                        <div className="map_div">
+                            <Spinner
+                                style={{
+                                    position: "absolute",
+                                    right: "0",
+                                    top: "50%",
+                                    left: "50%",
+                                }}
+                                color="primary"
+                            >
+                                {" "}
+                            </Spinner>
+                        </div>
+                    ) : ( */}
+                    <>
+                        {dataList?.map((res, index) => {
+                            const {
+                                locationLatitude,
+                                locationLongitude,
+                                countryName,
+                            } = res;
+                            if (locationLatitude !== null || locationLongitude !== null) {
+                                const icon = L.icon({
+                                    iconUrl:
+                                        "https://static.vecteezy.com/system/resources/previews/023/652/060/non_2x/green-map-pointer-icon-on-a-transparent-background-free-png.png",
+                                    iconSize: [32, 32],
+                                    iconAnchor: [16, 32],
+                                    popupAnchor: [0, -32],
+                                });
+                                return (
+                                    <Marker
+                                        position={[locationLatitude, locationLongitude]}
+                                        icon={icon}
+                                        key={index}
+                                    >
+                                        <Popup>
+                                            <h5>{countryName}</h5>
+                                            {/* <h5>
+                                                    {" "}
+                                                    {name === undefined ? firstName : name} <br />{" "}
+                                                    <h6>
+                                                        ({country?.name} {city?.name})
+                                                    </h6>
+                                                </h5>
+                                                <h6>
+                                                    <span className="text-muted">Address</span> <br />{" "}
+                                                    {address && address}
+                                                </h6>
+                                                <h6>
+                                                    <span className="text-muted">Phone</span> <br />{" "}
+                                                    <b>
+                                                        ({countryCode}) - {phone}
+                                                    </b>
+                                             </h6>
+                                                <h6>
+                                                    <span className="text-muted">Email</span> <br />{" "}
+                                                    <b>
+                                                        <a
+                                                            href={`mailto:${email}`}
+                                                            style={{ color: "#CC9752" }}
+                                                        >
+                                                            {email}
+                                                        </a>
+                                                    </b>
+                                                </h6> */}
+                                        </Popup>
+                                    </Marker>
+                                );
+                            }
+                        })}
+                    </>
+                    {/* )} */}
+                </MapContainer>
                 </div>
             </section>
 

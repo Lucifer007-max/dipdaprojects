@@ -53,7 +53,7 @@ const Expertise = () => {
             <sction className="bg-[#FCEEE8]">
                 <div className='relative container mx-auto px-4 "'>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 py-20 gap-6">
-                        <section className="py-20 ">
+                        <section className="py-20">
                             <div className="grid md:grid-cols-2 gap-12 items-center">
                                 <motion.div
                                     initial={{ opacity: 0, x: -20 }}
@@ -224,9 +224,7 @@ const Expertise = () => {
                                             viewport={{ once: false }}
                                             className="list-decimal list-inside space-y-4"
                                         >
-                                            {/* {Xraysexperties.map((service, index) => ( */}
                                                 <motion.p
-                                                    // key={index}
                                                     initial={{ opacity: 0, x: -50 }}
                                                     whileInView={{ opacity: 1, x: 0 }}
                                                     transition={{ duration: 0.5, delay: 1 * 0.1 }}
@@ -235,7 +233,6 @@ const Expertise = () => {
                                                 >
                                                    We provide <i className='text-custom'>Radiation Support</i> and Services, advanced  <i className='text-custom'>Quarry Planning</i> and <i className='text-custom'>Mine Planning*</i> using <i className='text-custom'>3D & 2D modeling</i>, comprehensive <i className='text-custom'>Laboratory Information System design</i> integrated with <i className='text-custom'>PGNAA, X-ray, and Quarry Data</i>, as well as specialized <i className='text-custom'>Environmental services and equipment supply</i> to enhance operational efficiency and compliance.
                                                 </motion.p>
-                                            {/* ))} */}
                                         </motion.div>
                                     </motion.div>
 
