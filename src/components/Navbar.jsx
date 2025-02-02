@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Facebook, Instagram, Link, MessageCircle, Phone } from 'lucide-react'
+import { Facebook, Instagram, Link as L, MessageCircle, Phone } from 'lucide-react'
 import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { title: "HOME", path: "" },
@@ -10,12 +11,20 @@ const navLinks = [
     title: "SERVICE",
     path: "service",
     children: [
-      { title: "PGNAA Service", path: "/service/pgnaa-service" },
-      { title: "X-Ray Service", path: "/service/xray-service" },
-      // { title: "Radiation Safety", path: "service/radiation-safety" },
+      { title: "PGNAA Service", path: "service/pgnaa-service" },
+      { title: "X-Ray Service", path: "service/xray-service" },
     ],
   },
-  { title: "PRODUCT", path: "product" },
+  // { title: "PRODUCT", path: "product" },
+  {
+    title: "PRODUCT",
+    path: "product",
+    children: [
+      { title: "Product A", path: "product/product-a" },
+      { title: "Product B", path: "product/product-b" },
+      { title: "Product C", path: "product/product-c" },
+    ],
+  },
   { title: "TRAINING", path: "training" },
   { title: "EXPERTISE", path: "expertise" },
   { title: "OUR NETWORK", path: "our-network" },
@@ -85,9 +94,15 @@ export default function WillstarNavbar() {
               <div key={index} className="relative">
                 {/* Parent Link */}
                 <motion.a
-                  onClick={() =>
-                    link.children ? setOpenDropdown(!openDropdown) : navigteByURL(link.path)
-                  }
+                  onClick={() => {
+                    if (link.children) {
+                      // Toggle the dropdown for SERVICE and PRODUCT links
+                      setOpenDropdown(openDropdown === link.title ? null : link.title);
+                    } else {
+                      // Regular link navigation
+                      navigteByURL(link.path);
+                    }
+                  }}
                   className="text-custom hover:text-dark text-sm tracking-wider transition-colors cursor-pointer flex items-center"
                   whileHover={{ y: -2 }}
                   whileTap={{ y: 0 }}
@@ -96,27 +111,25 @@ export default function WillstarNavbar() {
                 </motion.a>
 
                 {/* Dropdown Menu */}
-                {link.children && (
+                {link.children && openDropdown === link.title && (
                   <AnimatePresence>
-                    {openDropdown && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        transition={{ duration: 0.3 }}
-                        className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg overflow-hidden"
-                      >
-                        {link.children.map((child, childIndex) => (
-                          <a
-                            key={childIndex}
-                            href={child.path}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition"
-                          >
-                            {child.title}
-                          </a>
-                        ))}
-                      </motion.div>
-                    )}
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg overflow-hidden"
+                    >
+                      {link.children.map((child, childIndex) => (
+                        <a
+                          key={childIndex}
+                          href={child.path}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition"
+                        >
+                          {child.title}
+                        </a>
+                      ))}
+                    </motion.div>
                   </AnimatePresence>
                 )}
               </div>
@@ -154,100 +167,93 @@ export default function WillstarNavbar() {
       </motion.nav>
 
       <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          className="fixed inset-0 bg-white z-40 lg:hidden"
-          initial={{ x: "-100%" }}
-          animate={{ x: 0 }}
-          exit={{ x: "-100%" }}
-          transition={{ duration: 0.3 }}
-        >
-          <div className="container mx-auto px-6 py-24 h-full flex flex-col">
-            {/* Main Menu */}
-            <AnimatePresence>
-              {activeMenu === "main" && (
-                <motion.div
-                  key="main-menu"
-                  initial={{ x: 0, opacity: 1 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  exit={{ x: "-100%", opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="flex flex-col space-y-6"
-                >
-                  <motion.h6 className=" font-bold text-dark mb-1">
-                    
-                  </motion.h6>
-
-                  {navLinks.map((link) => (
-                    <motion.div key={link.title}>
-                      {link.children ? (
-                        <motion.button
-                          onClick={() => {
-                            setSubmenuOpen(true);
-                            setActiveMenu("service");
-                          }}
-                          className="text-1xl text-dark/90 hover:text-black transition-colors cursor-pointer w-full text-left"
-                        >
-                          {link.title} →
-                        </motion.button>
-                      ) : (
-                        <motion.a
-                          onClick={() => setIsOpen(false)}
-                          className="text-1xl text-dark/90 hover:text-black transition-colors cursor-pointer"
-                          href={link.path}
-                        >
-                          {link.title}
-                        </motion.a>
-                      )}
-                    </motion.div>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            {/* Submenu for Service */}
-            <AnimatePresence>
-              {activeMenu === "service" && (
-                <motion.div
-                  key="service-menu"
-                  initial={{ x: "100%", opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  exit={{ x: "100%", opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="flex flex-col space-y-6"
-                >
-                  {/* Back Button */}
-                  <motion.button
-                    onClick={() => setActiveMenu("main")}
-                    className="text-xl font-bold text-dark flex items-center space-x-2 mb-4"
+        {isOpen && (
+          <motion.div
+            className="fixed inset-0 bg-white z-40 lg:hidden"
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="container mx-auto px-6 py-24 h-full flex flex-col">
+              {/* Main Menu */}
+              <AnimatePresence>
+                {activeMenu === "main" && (
+                  <motion.div
+                    key="main-menu"
+                    initial={{ x: 0, opacity: 1 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: "-100%", opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex flex-col space-y-6"
                   >
-                    ← Back
-                  </motion.button>
-
-                  {navLinks
-                    .find((link) => link.title === "SERVICE")
-                    ?.children.map((child, index) => (
-                      <motion.a
-                        key={index}
-                        href={child.path}
-                        className="text-2xl text-dark/90 hover:text-black transition-colors cursor-pointer"
-                      >
-                        {child.title}
-                      </motion.a>
+                    {navLinks.map((link) => (
+                      <motion.div key={link.title}>
+                        {link.children ? (
+                          <motion.button
+                            onClick={() => setActiveMenu("service")}
+                            className="text-1xl text-dark/90 hover:text-black transition-colors cursor-pointer w-full text-left"
+                          >
+                            {link.title} →
+                          </motion.button>
+                        ) : (
+                          <Link
+                            to={link.path}
+                            onClick={() => setIsOpen(false)}
+                            className="text-1xl text-dark/90 hover:text-black transition-colors cursor-pointer"
+                          >
+                            {link.title}
+                          </Link>
+                        )}
+                      </motion.div>
                     ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
-            {/* Social Icons */}
-            <div className="mt-auto flex space-x-6">
-              <SocialIcon Icon={Instagram} size={24} />
-              <SocialIcon Icon={Facebook} size={24} />
+              {/* Submenu for Service */}
+              <AnimatePresence>
+                {activeMenu === "service" && (
+                  <motion.div
+                    key="service-menu"
+                    initial={{ x: "100%", opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: "100%", opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex flex-col space-y-6"
+                  >
+                    {/* Back Button */}
+                    <motion.button
+                      onClick={() => setActiveMenu("main")}
+                      className="text-xl font-bold text-dark flex items-center space-x-2 mb-4"
+                    >
+                      ← Back
+                    </motion.button>
+
+                    {navLinks
+                      .find((link) => link.title === "SERVICE")
+                      ?.children.map((child, index) => (
+                        <motion.a
+                          key={index}
+                          href={child.path}
+                          className="text-2xl text-dark/90 hover:text-black transition-colors cursor-pointer"
+                        >
+                          {child.title}
+                        </motion.a>
+                      ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Social Icons */}
+              <div className="mt-auto flex space-x-6">
+                <SocialIcon Icon={Instagram} size={24} />
+                <SocialIcon Icon={Facebook} size={24} />
+              </div>
             </div>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

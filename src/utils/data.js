@@ -153,3 +153,37 @@ export const servicesList = [
     img: Radioactive
   },
 ];
+
+
+export const accordionData = [
+  {
+    title: "BREAKDOWN MAINTENANCE",
+    content:
+      "GeoSpectra provides various levels of breakdown response, from urgent instant response to cost-effective mutually-agreeable-time response. The fastest response is available to customers with a maintenance agreement.",
+  },
+  {
+    title: "SPARE PARTS SUPPLY",
+    content:
+      "GeoSpectra sources original spare parts for a wide range of equipment. We maintain strategic stock levels, ensuring engineers are well-equipped with spare parts even in rapid response breakdown situations.",
+  },
+  {
+    title: "REFERENCE MATERIALS & CONSUMABLES SUPPLY",
+    content:
+      "We supply Certified Reference Material (CRM), Reference Material (RM), and Calibration Standards. Additionally, we provide consumables like sample cups, X-ray film, binder, and flux.",
+  },
+  {
+    title: "TRAINING SERVICES",
+    content:
+      "GeoSpectra offers on-site training for personnel and scheduled training courses at various locations. Our training ensures optimal operation and maintenance of your equipment.",
+  },
+  {
+    title: "INSTRUMENT CALIBRATION",
+    content:
+      "We provide complete calibration services, ensuring traceability to international standards. Our expertise includes XRF, XRD, and SICK continuous emission monitoring systems.",
+  },
+  {
+    title: "CALIBRATION MAINTENANCE",
+    content:
+      "GeoSpectra monitors your equipment calibration on-site or remotely, making necessary adjustments to maintain accuracy and compliance.",
+  },
+];

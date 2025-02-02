@@ -8,6 +8,7 @@ import { servicesList } from '../../utils/data'
 import Breadcrumb from '../Breadcrumb/Breadcrumb'
 import { useMediaQuery } from 'react-responsive'
 import support from '../../assets/images/service/supportService.jpg'
+import Accordion from './Accordion'
 export default function Service({ title, content, pageTitle, TagLine }) {
   const containerRef = useRef(null)
   const sectionRef = useRef(null)
@@ -134,7 +135,11 @@ export default function Service({ title, content, pageTitle, TagLine }) {
           </motion.div>
 
         </div>
+        <div className='py-10'>
+          <Accordion />
+
+        </div>
       </div>
-    </section >
+    </section>
   )
 }
