@@ -4,30 +4,11 @@ import { motion, useScroll, useTransform, useAnimation } from 'framer-motion'
 import { Music, Video, Users, Share2, CalendarDays, TrendingUp, Code } from 'lucide-react'
 import { useRef, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
-import { servicesList } from '../utils/data'
-import Breadcrumb from './Breadcrumb/Breadcrumb'
+import { servicesList } from '../../utils/data'
+import Breadcrumb from '../Breadcrumb/Breadcrumb'
 import { useMediaQuery } from 'react-responsive'
-import support from '../assets/images/service/supportService.jpg'
-const GlowingCard = ({ children, className, glowColor = "bg-white/20" }) => {
-  return (
-    <motion.div
-      className="relative group"
-      whileHover={{ scale: 1.05 }}
-      transition={{ type: "spring", stiffness: 300, damping: 10 }}
-    >
-      <motion.div
-        className={`absolute inset-0 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 ${glowColor}`}
-        initial={{ scale: 0.8 }}
-        whileHover={{ scale: 1.2 }}
-      />
-      <div className={`relative ${className}`}>
-        {children}
-      </div>
-    </motion.div>
-  )
-}
-
-export default function Service() {
+import support from '../../assets/images/service/supportService.jpg'
+export default function Service({ title, content, pageTitle, TagLine }) {
   const containerRef = useRef(null)
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: false, amount: 0.1 })
@@ -51,7 +32,7 @@ export default function Service() {
   return (
     <section id="production" className="relative min-h-screen pt-20 bg-white text-white overflow-hidden">
       <div className='container mx-auto'>
-        <Breadcrumb title={'PGNAA SERVICE'} />
+        <Breadcrumb title={title} />
 
       </div>
       <div className="bg-gray-100 text-gray-900">
@@ -75,10 +56,10 @@ export default function Service() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="relative z-10"
+            className="relative z-10 px-3"
           >
-            <h1 className="text-4xl text-light font-bold">Gamma-ray On-line Analyzer Support & Services</h1>
-            <p className="mt-4 text-light text-lg">Prompt Gamma Neutron Activation Analysis (PGNAA)</p>
+            <h1 className="text-4xl text-light font-bold">{pageTitle}</h1>
+            <p className="mt-4 text-light text-lg">{TagLine}</p>
           </motion.div>
         </section>
 
@@ -111,11 +92,8 @@ export default function Service() {
             <motion.p
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }} className="text-gray-600 leading-relaxed">
-              The Gamma-ray On-line Analyzer is a state-of-the-art tool designed for real-time monitoring and precise measurement of gamma radiation levels. This advanced system is used in various industries, including nuclear energy, environmental monitoring, and industrial processes, to ensure safety, efficiency, and compliance with regulatory standards. By leveraging cutting-edge technology, the Gamma-ray On-line Analyzer delivers accurate, continuous data that is essential for monitoring radiation and ensuring that all processes meet the necessary safety criteria.
-
-              The Gamma-ray On-line Analyzer is a state-of-the-art tool designed for real-time monitoring and precise measurement of gamma radiation levels. This advanced system is used in various industries, including nuclear energy, environmental monitoring, and industrial processes, to ensure safety, efficiency, and compliance with regulatory standards. By leveraging cutting-edge technology, the Gamma-ray On-line Analyzer delivers accurate, continuous data that is essential for monitoring radiation and ensuring that all processes meet the necessary safety criteria.
-
+              transition={{ duration: 0.5, delay: 0.1 }} className="text-gray-600 leading-relaxed mt-4">
+              {content}
 
 
             </motion.p>

@@ -4,22 +4,35 @@ import { Facebook, Instagram, Link, MessageCircle, Phone } from 'lucide-react'
 import { useNavigate } from 'react-router-dom';
 
 const navLinks = [
-  { title: 'HOME', path: '' },
-  { title: 'ABOUT US', path: 'about-us' },
-  { title: 'SERVICE', path: 'service' },
-  { title: 'PRODUCT', path: 'product' },
-  { title: 'TRAINING', path: 'training' },
-  { title: 'EXPERTISE', path: 'expertise' },
-  { title: 'OUR NETWORK', path: 'our-network' },
-  { title: 'CONTACT US', path: 'contact-us' }
-]
+  { title: "HOME", path: "" },
+  { title: "ABOUT US", path: "about-us" },
+  {
+    title: "SERVICE",
+    path: "service",
+    children: [
+      { title: "PGNAA Service", path: "/service/pgnaa-service" },
+      { title: "X-Ray Service", path: "/service/xray-service" },
+      // { title: "Radiation Safety", path: "service/radiation-safety" },
+    ],
+  },
+  { title: "PRODUCT", path: "product" },
+  { title: "TRAINING", path: "training" },
+  { title: "EXPERTISE", path: "expertise" },
+  { title: "OUR NETWORK", path: "our-network" },
+  { title: "CONTACT US", path: "contact-us" },
+];
+
 
 
 export default function WillstarNavbar() {
   const navigate = useNavigate();
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState("main");
+
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  
+
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
@@ -68,20 +81,49 @@ export default function WillstarNavbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <motion.a
-                key={link.title}
-                onClick={() => navigteByURL(link.path.toLowerCase().replace(' ', '-'))}
-                className="text-custom hover:text-dark text-sm tracking-wider transition-colors cursor-pointer"
-                whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
-              >
-                {link.title}
-              </motion.a>
+            {navLinks.map((link, index) => (
+              <div key={index} className="relative">
+                {/* Parent Link */}
+                <motion.a
+                  onClick={() =>
+                    link.children ? setOpenDropdown(!openDropdown) : navigteByURL(link.path)
+                  }
+                  className="text-custom hover:text-dark text-sm tracking-wider transition-colors cursor-pointer flex items-center"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ y: 0 }}
+                >
+                  {link.title}
+                </motion.a>
+
+                {/* Dropdown Menu */}
+                {link.children && (
+                  <AnimatePresence>
+                    {openDropdown && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.3 }}
+                        className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg overflow-hidden"
+                      >
+                        {link.children.map((child, childIndex) => (
+                          <a
+                            key={childIndex}
+                            href={child.path}
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition"
+                          >
+                            {child.title}
+                          </a>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
+              </div>
             ))}
+
+            {/* Social Icons */}
             <div className="flex items-center space-x-4 ml-8">
-              {/* <SocialIcon Icon={Phone} /> */}
-              {/* <SocialIcon Icon={MessageCircle} /> */}
               <SocialIcon Icon={Instagram} />
               <SocialIcon Icon={Facebook} />
             </div>
@@ -111,43 +153,101 @@ export default function WillstarNavbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            className="fixed inset-0 bg-white z-40 lg:hidden"
-          >
-            <div className="container mx-auto px-6 py-24 h-full flex flex-col">
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-7xl font-bold text-white mb-16"
-              >
-                menu
-              </motion.h2>
+      {isOpen && (
+        <motion.div
+          className="fixed inset-0 bg-white z-40 lg:hidden"
+          initial={{ x: "-100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "-100%" }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className="container mx-auto px-6 py-24 h-full flex flex-col">
+            {/* Main Menu */}
+            <AnimatePresence>
+              {activeMenu === "main" && (
+                <motion.div
+                  key="main-menu"
+                  initial={{ x: 0, opacity: 1 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: "-100%", opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="flex flex-col space-y-6"
+                >
+                  <motion.h6 className=" font-bold text-dark mb-1">
+                    
+                  </motion.h6>
 
-              <div className="flex flex-col space-y-6">
-                {navLinks.map((link) => (
-                  <motion.a
-                    key={link.title}
-                    onClick={() => navigteByURL(link.path.toLowerCase().replace(' ', '-'))}
-                    className="text-3xl text-dark/90 hover:text-white transition-colors cursor-pointer"
+                  {navLinks.map((link) => (
+                    <motion.div key={link.title}>
+                      {link.children ? (
+                        <motion.button
+                          onClick={() => {
+                            setSubmenuOpen(true);
+                            setActiveMenu("service");
+                          }}
+                          className="text-1xl text-dark/90 hover:text-black transition-colors cursor-pointer w-full text-left"
+                        >
+                          {link.title} →
+                        </motion.button>
+                      ) : (
+                        <motion.a
+                          onClick={() => setIsOpen(false)}
+                          className="text-1xl text-dark/90 hover:text-black transition-colors cursor-pointer"
+                          href={link.path}
+                        >
+                          {link.title}
+                        </motion.a>
+                      )}
+                    </motion.div>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* Submenu for Service */}
+            <AnimatePresence>
+              {activeMenu === "service" && (
+                <motion.div
+                  key="service-menu"
+                  initial={{ x: "100%", opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: "100%", opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="flex flex-col space-y-6"
+                >
+                  {/* Back Button */}
+                  <motion.button
+                    onClick={() => setActiveMenu("main")}
+                    className="text-xl font-bold text-dark flex items-center space-x-2 mb-4"
                   >
-                    {link.title}
-                  </motion.a>
-                ))}
-              </div>
+                    ← Back
+                  </motion.button>
 
-              <div className="mt-auto flex space-x-6">
-                <SocialIcon Icon={Phone} size={24} />
-                {/* <SocialIcon Icon={MessageCircle} size={24} /> */}
-                <SocialIcon Icon={Instagram} size={24} />
-                <SocialIcon Icon={Facebook} size={24} />
-              </div>
+                  {navLinks
+                    .find((link) => link.title === "SERVICE")
+                    ?.children.map((child, index) => (
+                      <motion.a
+                        key={index}
+                        href={child.path}
+                        className="text-2xl text-dark/90 hover:text-black transition-colors cursor-pointer"
+                      >
+                        {child.title}
+                      </motion.a>
+                    ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* Social Icons */}
+            <div className="mt-auto flex space-x-6">
+              <SocialIcon Icon={Instagram} size={24} />
+              <SocialIcon Icon={Facebook} size={24} />
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
     </>
   )
 }
