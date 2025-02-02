@@ -142,7 +142,7 @@ export default function WillstarNavbar() {
               {[...Array(4)].map((_, i) => (
                 <motion.div
                   key={i}
-                  className="w-2 h-2 bg-white rounded-full"
+                  className="w-2 h-2 bg-custom rounded-full"
                   initial={false}
                   animate={isOpen ? { scale: [1, 1.5, 1] } : { scale: 1 }}
                   transition={{ delay: i * 0.1 }}
