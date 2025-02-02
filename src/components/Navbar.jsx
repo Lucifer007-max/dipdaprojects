@@ -11,8 +11,8 @@ const navLinks = [
     title: "SERVICE",
     path: "service",
     children: [
-      { title: "PGNAA Service", path: "service/pgnaa-service" },
-      { title: "X-Ray Service", path: "service/xray-service" },
+      { title: "PGNAA Service", path: "/service/pgnaa-service" },
+      { title: "X-Ray Service", path: "/service/xray-service" },
     ],
   },
   // { title: "PRODUCT", path: "product" },
@@ -20,9 +20,9 @@ const navLinks = [
     title: "PRODUCT",
     path: "product",
     children: [
-      { title: "Product A", path: "product/product-a" },
-      { title: "Product B", path: "product/product-b" },
-      { title: "Product C", path: "product/product-c" },
+      { title: "Product A", path: "/product/product-a" },
+      { title: "Product B", path: "/product/product-b" },
+      { title: "Product C", path: "/product/product-c" },
     ],
   },
   { title: "TRAINING", path: "training" },
@@ -167,55 +167,56 @@ export default function WillstarNavbar() {
       </motion.nav>
 
       <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            className="fixed inset-0 bg-white z-40 lg:hidden"
-            initial={{ x: "-100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "-100%" }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="container mx-auto px-6 py-24 h-full flex flex-col">
-              {/* Main Menu */}
-              <AnimatePresence>
-                {activeMenu === "main" && (
-                  <motion.div
-                    key="main-menu"
-                    initial={{ x: 0, opacity: 1 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: "-100%", opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="flex flex-col space-y-6"
-                  >
-                    {navLinks.map((link) => (
-                      <motion.div key={link.title}>
-                        {link.children ? (
-                          <motion.button
-                            onClick={() => setActiveMenu("service")}
-                            className="text-1xl text-dark/90 hover:text-black transition-colors cursor-pointer w-full text-left"
-                          >
-                            {link.title} →
-                          </motion.button>
-                        ) : (
-                          <Link
-                            to={link.path}
-                            onClick={() => setIsOpen(false)}
-                            className="text-1xl text-dark/90 hover:text-black transition-colors cursor-pointer"
-                          >
-                            {link.title}
-                          </Link>
-                        )}
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+      {isOpen && (
+        <motion.div
+          className="fixed inset-0 bg-white z-40 lg:hidden"
+          initial={{ x: "-100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "-100%" }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className="container mx-auto px-6 py-24 h-full flex flex-col">
+            {/* Main Menu */}
+            <AnimatePresence>
+              {activeMenu === "main" && (
+                <motion.div
+                  key="main-menu"
+                  initial={{ x: 0, opacity: 1 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: "-100%", opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="flex flex-col space-y-6"
+                >
+                  {navLinks.map((link) => (
+                    <motion.div key={link.title}>
+                      {link.children ? (
+                        <motion.button
+                          onClick={() => setActiveMenu(link.title.toLowerCase())}
+                          className="text-1xl text-dark/90 hover:text-black transition-colors cursor-pointer w-full text-left"
+                        >
+                          {link.title} →
+                        </motion.button>
+                      ) : (
+                        <Link
+                          to={link.path}
+                          onClick={() => setIsOpen(false)}
+                          className="text-1xl text-dark/90 hover:text-black transition-colors cursor-pointer"
+                        >
+                          {link.title}
+                        </Link>
+                      )}
+                    </motion.div>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
 
-              {/* Submenu for Service */}
-              <AnimatePresence>
-                {activeMenu === "service" && (
+            {/* Submenus for Products and Services */}
+            {["PRODUCT", "SERVICE"].map((menu) => (
+              <AnimatePresence key={menu}>
+                {activeMenu === menu.toLowerCase() && (
                   <motion.div
-                    key="service-menu"
+                    key={`${menu}-menu`}
                     initial={{ x: "100%", opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ x: "100%", opacity: 0 }}
@@ -231,7 +232,7 @@ export default function WillstarNavbar() {
                     </motion.button>
 
                     {navLinks
-                      .find((link) => link.title === "SERVICE")
+                      .find((link) => link.title === menu)
                       ?.children.map((child, index) => (
                         <motion.a
                           key={index}
@@ -244,16 +245,17 @@ export default function WillstarNavbar() {
                   </motion.div>
                 )}
               </AnimatePresence>
+            ))}
 
-              {/* Social Icons */}
-              <div className="mt-auto flex space-x-6">
-                <SocialIcon Icon={Instagram} size={24} />
-                <SocialIcon Icon={Facebook} size={24} />
-              </div>
+            {/* Social Icons */}
+            <div className="mt-auto flex space-x-6">
+              <SocialIcon Icon={Instagram} size={24} />
+              <SocialIcon Icon={Facebook} size={24} />
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
     </>
   )
 }

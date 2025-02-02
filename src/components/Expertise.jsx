@@ -52,7 +52,7 @@ const Expertise = () => {
             </section>
             <sction className="bg-[#FCEEE8]">
                 <div className='relative container mx-auto px-4 "'>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 py-20 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 py-20 gap-6">
                         <section className="py-20">
                             <div className="grid md:grid-cols-2 gap-12 items-center">
                                 <motion.div

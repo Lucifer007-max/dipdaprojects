@@ -11,6 +11,7 @@ import radtion from '../assets/videos/radtion.mp4';
 import Media from './media';
 import { GlowingCard } from './card/GlowingCard';
 import Product from './Product';
+import { useMediaQuery } from 'react-responsive';
 const Hero = () => {
   const sectionRef = useRef(null)
   const aboutUsRef = useRef(null)

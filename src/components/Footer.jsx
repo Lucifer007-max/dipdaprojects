@@ -134,20 +134,20 @@ const Footer = () => {
             </div>
           </motion.div> */}
         </div>
-        <div className="grid md:grid-cols-2 gap-12 mb-16 place-items-center">
+        <div className="grid md:grid-cols-2 gap-12 mb-16 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="space-y-6"
+            className="w-100"
           >
-            <h4 className="font-space-grotesk text-xl font-bold text-center">Quick Links</h4>
-            <ul className="space-y-4 flex">
-              {['', 'Services', 'Projects', 'Contact'].map((item, index) => (
+            <h4 className="font-space-grotesk text-xl font-bold text-left mb-4">Quick Links</h4>
+            <ul className="flex">
+              {['Home', 'Services', 'Projects', 'Contact'].map((item, index) => (
                 <motion.li
                   key={index}
                   whileHover={{ x: 5 }}
-                  className="text-light mx-4  mt-0 hover:text-black transition-colors"
+                  className="text-light mr-4   hover:text-black transition-colors"
                 >
                   <a href={`#${item.toLowerCase()}`}>{item}</a>
                 </motion.li>

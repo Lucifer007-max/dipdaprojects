@@ -9,6 +9,7 @@ import project3 from '../assets/images/projects/room-jpg-e1694747063529.webp'
 import project4 from '../assets/images/projects/bantley-jpg-e1694747011442.webp'
 import project5 from '../assets/images/projects/davidoff-jpg-e1694747097761.webp'
 import project6 from '../assets/images/projects/beluga-jpg-e1694747132112.webp'
+import { useMediaQuery } from 'react-responsive'
 
 
 export default function Product() {
@@ -19,6 +20,7 @@ export default function Product() {
   })
 
   const y = useTransform(scrollYProgress, [0, 1], [0, -100])
+  const isSmallScreen = useMediaQuery({ query: '(max-width: 600px)' });
 
   // const { scrollYProgress } = useScroll();
   // const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
@@ -135,6 +137,8 @@ export default function Product() {
                   className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-lg inset-0 bg-gradient-to-t from-customOrange to-transparent opacity-1"
                   whileHover={{ scale: 1, zIndex: 50 }} // Desktop hover effect
                   // onTap={{ scale: 1.05, zIndex: 50 }} // Mobile tap effect
+                  whileInView={isSmallScreen ? { scale: 1, zIndex: 50 } : undefined}
+
                   transition={{ duration: 1 }}
                   style={{ y }} // Apply the scroll-based Y-axis transform here
                 >
@@ -148,12 +152,14 @@ export default function Product() {
                     initial={{ opacity: 0, y: 100 }}
                     whileHover={{ opacity: 1, y: 0 }} // Desktop hover effect
                     // onTap={{ opacity: 1, y: 0 }} // Mobile tap effect
+                    whileInView={isSmallScreen ? { opacity: 1, y: 0 }: undefined}
                     transition={{ duration: 0.3 }}
                     className="absolute inset-0 bg-gradient-to-t from-customOrange/90 p-6 flex flex-col justify-between"
                   >
                     <div className="space-y-4">
                       <motion.h3
                         whileHover={{ scale: 1.1 }} // Desktop hover effect
+                        whileInView={isSmallScreen ? { scale: 1.1 } : undefined}
                         // onTap={{ scale: 1.1 }} // Mobile tap effect
                         className="text-dark text-3xl font-bold"
                       >
@@ -165,7 +171,7 @@ export default function Product() {
                     <div className="space-y-4">
                       <motion.button
                         whileHover={{ scale: 1.05 }} // Desktop hover effect
-                        whileTap={{ scale: 0.95 }} // Mobile tap effect
+                        whileInView={isSmallScreen ? { scale: 0.95 } : undefined}
                         className="w-full px-6 py-3 bg-custom text-white rounded-lg font-medium"
                       >
                         View Service
