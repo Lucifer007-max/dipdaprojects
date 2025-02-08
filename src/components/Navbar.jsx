@@ -74,7 +74,7 @@ export default function WillstarNavbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: 'spring', stiffness: 50 }}
-        className={`fixed w-full z-50 transition-colors duration-300 ${isScrolled ? 'bg-black/50 backdrop-blur-sm' : 'bg-transparent'
+        className={`w-full z-50 transition-colors duration-300 ${isScrolled ? 'bg-black/50 backdrop-blur-sm' : 'bg-transparent'
           }`}
       >
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -264,7 +264,7 @@ function SocialIcon({ Icon, size = 20 }) {
   return (
     <motion.a
       href="#"
-      className="text-white/80 hover:text-white transition-colors"
+      className="text-dark/80 hover:text-dark transition-colors"
       whileHover={{ scale: 1.2 }}
       whileTap={{ scale: 0.9 }}
     >

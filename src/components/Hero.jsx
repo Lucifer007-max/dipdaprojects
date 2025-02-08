@@ -13,6 +13,8 @@ import { GlowingCard } from './card/GlowingCard';
 import Product from './Product';
 import { useMediaQuery } from 'react-responsive';
 import logo from '../assets/images/home.jpg'
+import FeatureGrid from './card/FeatureCard';
+import AcquisitionsSection from './card/OurClients';
 const Hero = () => {
   const sectionRef = useRef(null)
   const aboutUsRef = useRef(null)
@@ -46,7 +48,7 @@ const Hero = () => {
       <section id="hero" className="relative h-screen w-full overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0">
-        <img src={logo} className='w-100' />
+          <img src={logo} className='w-100 h-100' />
           {/* <ReactPlayer
             url={video}
             playing
@@ -205,7 +207,7 @@ const Hero = () => {
             <p>
               Spectra Line Industrial LLC and GeoSpectra Technical Services LLC, with offices in Dubai, UAE, specialize in providing high-end, cost-effective technical solutions and services across a range of industries, including Cement & Coal, Iron & Steel, Oil & Gas, and Minerals. They offer dedicated technical support for analytical instruments such as XRF, XRD, and OES analyzers, as well as Gamma-ray on-line analyzers like PGNAA systems (e.g., Gamma-Metrics, Geoscan). Their services also extend to radiation technology, including the supply of radioactive isotopes, radiation services, and radioactive waste management, along with expert training and application support in mission-critical environments.
             </p>
-           
+
           </motion.div>
         </div>
       </section>
@@ -338,129 +340,11 @@ const Hero = () => {
             SERVICE
           </motion.span>
         </motion.h2>
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-4"
-            >
-              <h3 className="text-2xl font-bold text-dark">
-                ANALYTICAL PROCESS & QUALITY CONTROL
-              </h3>
-              <p className="text-dark">
-                In the field of scientific analysis, ensuring the highest level of accuracy and consistency is paramount. The use of advanced analytical instruments plays a crucial role in maintaining quality control and enhancing the efficiency of processes. Technologies such as X-ray Fluorescence (XRF) Analyzers, X-ray Diffraction (XRD) Analyzers, Optical Emission Spectrometers (OES), and Lab Automation & Networking are pivotal in streamlining analytical processes across various industries, including materials science, mining, metallurgy, pharmaceuticals, and environmental monitoring.
-              </p>
-              <motion.button
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.4 }}
-              whileHover={{ scale: 1.05 }}
-              className="px-8 py-4 border border-customOrange/50 text-dark font-orbitron inline-flex items-center gap-3 group hover:bg-customOrange/10"
-            >
-              Know More
-              <FaPlay className="group-hover:scale-110 transition-transform" />
-            </motion.button>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <motion.div
-                className="relative h-[400px] overflow-hidden rounded-lg"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
-                {/* <img
-                  src="https://willstar.ru/wp-content/themes/willstar/assets/images/aboutus-section/color-madness.webp"
-                  alt="Artistic visual"
-                  className="w-full h-full object-cover"
-                /> */}
-                <ReactPlayer
-                  url={QualityVideo}
-                  playing
-                  loop
-                  muted
-                  width="100%"
-                  height="100%"
-                // style={{ objectFit: 'cover', background: "rgb(15 17 19)" }}
-                />
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-t from-customOrange to-transparent opacity-0"
-                  whileHover={{ opacity: 0.6 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
+        <FeatureGrid />
+        
       </section>
-      <section className="py-20 bg-[#FCEEE8] ">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.0 }}
-              className="relative"
-            >
-              <motion.div
-                className="relative h-[400px] overflow-hidden rounded-lg"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.6 }}
-              >
-                {/* <img
-                  src="https://willstar.ru/wp-content/themes/willstar/assets/images/aboutus-section/color-madness.webp"
-                  alt="Artistic visual"
-                  className="w-full h-full object-cover"
-                /> */}
-                <ReactPlayer
-                  url={radtion}
-                  playing
-                  loop
-                  muted
-                  width="100%"
-                  height="100%"
-                // style={{ objectFit: 'cover', background: "rgb(15 17 19)" }}
-                />
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-t from-customOrange to-transparent opacity-0"
-                  whileHover={{ opacity: 0.6 }}
-                  transition={{ duration: 0.6 }}
-                />
-              </motion.div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.0 }}
-              className="space-y-4"
-            >
-              <h3 className="text-2xl font-bold text-dark">
-                RADIATION SERVICES & PRODUCTS SUPPORT
-              </h3>
-              <p className="text-dark">
-              Radiation-based technologies play a critical role in a variety of industries, from healthcare and research to energy and manufacturing. However, with the use of radioactive materials comes the responsibility of ensuring safety, compliance with regulations, and proper handling. Our Radiation Services & Products Support offers a range of professional services to assist businesses and organizations in managing their radiation needs effectively and safely. These services include Professional Consultancy, Radioactive Waste Management, and Radioisotope Supply & Installation, all designed to support the safe and efficient use of radioactive materials.
-              </p>
-              <motion.button
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.4 }}
-              whileHover={{ scale: 1.05 }}
-              className="px-8 py-4 border border-customOrange/50 text-dark font-orbitron inline-flex items-center gap-3 group hover:bg-customOrange/10"
-            >
-              Know More
-              <FaPlay className="group-hover:scale-110 transition-transform" />
-            </motion.button>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-      <Media />
+      <AcquisitionsSection />
+      {/* <Media /> */}
       <Product />
     </>
 
