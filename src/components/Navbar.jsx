@@ -77,7 +77,7 @@ export default function WillstarNavbar() {
         className={`w-full sticky top-0  z-50 transition-colors duration-300 ${isScrolled ? 'bg-white/50 backdrop-blur-sm' : 'bg-transparent'
           }`}
       >
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="container mx-auto px-6 py-0 flex justify-between items-center">
           <a href="/" className="relative z-50">
             <motion.div
               className="text-2xl font-bold text-white italic tracking-wider"
