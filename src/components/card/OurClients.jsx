@@ -2,10 +2,13 @@ import { motion } from "framer-motion";
 
 const acquisitions = [
   { name: "CAPCO", image: "https://www.emirates247.com/polopoly_fs/1.702535.1677238865!/image/image.jpg" },
-  { name: "Edgile", image: "/edgile.png" },
-  { name: "Rizing", image: "/rizing.png" },
-  { name: "LeanSwift", image: "/leanswift.png" },
-  { name: "CAS Group", image: "/cas-group.png" },
+  { name: "CAPCO", image: "https://www.emirates247.com/polopoly_fs/1.702535.1677238865!/image/image.jpg" },
+  { name: "CAPCO", image: "https://www.emirates247.com/polopoly_fs/1.702535.1677238865!/image/image.jpg" },
+  { name: "CAPCO", image: "https://www.emirates247.com/polopoly_fs/1.702535.1677238865!/image/image.jpg" },
+  { name: "CAPCO", image: "https://www.emirates247.com/polopoly_fs/1.702535.1677238865!/image/image.jpg" },
+  { name: "CAPCO", image: "https://www.emirates247.com/polopoly_fs/1.702535.1677238865!/image/image.jpg" },
+  { name: "CAPCO", image: "https://www.emirates247.com/polopoly_fs/1.702535.1677238865!/image/image.jpg" },
+  { name: "CAPCO", image: "https://www.emirates247.com/polopoly_fs/1.702535.1677238865!/image/image.jpg" },
 ];
 
 export default function AcquisitionsSection() {
@@ -38,7 +41,7 @@ export default function AcquisitionsSection() {
           </motion.span>
         </motion.h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 px-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center items-center gap-6 px-6">
         {acquisitions.map((item, index) => (
           <motion.div
             key={item.name}

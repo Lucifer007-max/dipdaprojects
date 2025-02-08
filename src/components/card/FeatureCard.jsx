@@ -4,9 +4,10 @@ import Xray from '../../assets/images/hero/Xray.jpg'
 import Quaality from '../../assets/images/hero/AnalyticalProcess.jpg'
 import Radtion from '../../assets/images/hero/Radtion.jpg'
 import Environment from '../../assets/images/hero/Environment.jpg'
+import { FaArrowRight, FaPlay } from "react-icons/fa";
 const features = [
   { title: "PGNAA Analyzer", subtitle:'Gamma-ray On-line analyzers support & services - Prompt Gamma Neutron Activation Analysis (PGNAA)', image:PGNAA, color: "bg-blue-600 h-common" },
-  { title: "X-Ray Analyzer", subtitle:'X-ray analyzers Support & Services', image:Xray, color: "bg-blue-800 h-common" },
+  { title: "X-Ray Analyzer", subtitle:'X-ray analyzers Support & Services', image:Xray, color: "bg-gray-800 h-common" },
   { title: "Analytical Process & Quality Control", subtitle:"Radiation-based technologies play a critical role in a variety of industries",  image: Quaality, color: "bg-purple-700 h-common" },
   { title: "Radiation Services & Product Support", subtitle:"The activities such as supply of the industrial and reference radioactive sources; mounting, dismantling, calibration, services", image:Radtion, color: "bg-indigo-700 h-common" },
   { title: "Environment & Geological Engineering",subtitle:'Datamine Support-Computerized planning for mineral excavation', image:Environment, color: "bg-teal-600 h-50" },
@@ -14,7 +15,7 @@ const features = [
 
 export default function FeatureGrid() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  bg-gray-100">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center align-center  bg-gray-100">
       {features.map((feature, index) => (
         <>
           {/* Image Block with Animation */}
@@ -43,6 +44,16 @@ export default function FeatureGrid() {
           >
             <h2 className="text-2xl font-bold">{feature.title}</h2>
             <p>{feature.subtitle}</p>
+            <motion.button
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.4 }}
+            whileHover={{ scale: 1.05 }}
+            className="px-4 py-2 mt-3 border border-white/50 text-light font-orbitron inline-flex items-center gap-3 group hover:bg-primary/10"
+          >
+            Know More
+            <FaPlay className="group-hover:scale-110 transition-transform" />
+          </motion.button>
           </motion.div>
 
         </>

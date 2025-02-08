@@ -43,26 +43,26 @@ const Footer = () => {
       <footer className="bg-footer2 border-t border-light-800">
         <div className="container mx-auto px-4 py-12">
           {/* Top Section */}
-          <div className="grid md:grid-cols-4 gap-12 mb-16 place-items-center">
+          <div className="grid md:grid-cols-3 gap-12 mb-16 place-items-center">
             {/* Logo & Info */}
-            <div className="relative mb-10 text-center">
+            {/* <div className="relative mb-10 text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 className="space-y-6 relative z-10"
               >
-                <img
+                {/* <img
                   src="https://www.geospectratech.com/images/logo.png"
                   alt="GeoSpectra Logo"
                   className="mx-auto  drop-shadow-lg filter brightness-200"
                   style={{ filter: "drop-shadow(rgb(255, 255, 255,0.9) 2px 0px 0px)" }}
-                />
+                /> */}
 
-                <p className="font-outfit text-light-400 leading-relaxed">
+                {/* <p className="font-outfit text-light-400 leading-relaxed">
                   Creating exceptional digital experiences through innovative design and technology.
                 </p>
-              </motion.div>
-            </div>
+              </motion.div> */}
+            {/* </div> 
 
 
             {/* Quick Links */}

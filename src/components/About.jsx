@@ -268,9 +268,9 @@ const About = () => {
         </div>
         <div className='py-10'></div>
       </section>
-      <section className='overflow-hidden'>
+      {/* <section className='overflow-hidden'>
       <CardGrid/>
-      </section>
+      </section> */}
       {/* NUMBER COUNTER */}
       <section className='conatiner max-w-5xl mx-auto px-6 lg:px-12 py-12 space-y-16'>
         <div className="relative pb-16 md:pb-24 lg:pb-32  text-custom overflow-hidden">

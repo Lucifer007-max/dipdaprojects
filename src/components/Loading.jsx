@@ -6,7 +6,7 @@ quantum.register();
 const Loading = () => {
   return (
     <motion.div
-      className="loader bg-[#FFF1FF]"
+      className="loader bg-[#FCEEE8]"
       initial={{ x: "100vw", opacity: 1 }}  // Start from right
       animate={{ x: 0, opacity: 1 }}  // Slide in to center
       exit={{ x: "-100vw", opacity: 0 }}  // Slide out to the left on exit

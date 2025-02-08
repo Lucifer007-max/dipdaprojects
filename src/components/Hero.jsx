@@ -12,9 +12,10 @@ import Media from './media';
 import { GlowingCard } from './card/GlowingCard';
 import Product from './Product';
 import { useMediaQuery } from 'react-responsive';
-import logo from '../assets/images/home.jpg'
+import logo from '../assets/videos/bg.mp4'
 import FeatureGrid from './card/FeatureCard';
 import AcquisitionsSection from './card/OurClients';
+import CardGrid from './card/CardGrid';
 const Hero = () => {
   const sectionRef = useRef(null)
   const aboutUsRef = useRef(null)
@@ -47,17 +48,17 @@ const Hero = () => {
     <>
       <section id="hero" className="relative h-screen w-full overflow-hidden">
         {/* Video Background */}
-        <div className="absolute inset-0">
-          <img src={logo} className='w-100 h-100' />
-          {/* <ReactPlayer
-            url={video}
+        <div className="absolute z-9">
+          {/* <img src={logo} className='w-100 h-100' /> */}
+          <ReactPlayer
+            url={logo}
             playing
             loop
             muted
             width="100%"
             height="100%"
             style={{ objectFit: 'cover', background: "rgb(15 17 19)" }}
-          /> */}
+          />
           <div className="absolute inset-0 bg-dark/70" />
         </div>
 
@@ -346,6 +347,8 @@ const Hero = () => {
       <AcquisitionsSection />
       {/* <Media /> */}
       <Product />
+
+      <CardGrid/>
     </>
 
   );

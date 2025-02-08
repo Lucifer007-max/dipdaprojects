@@ -74,7 +74,7 @@ export default function WillstarNavbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: 'spring', stiffness: 50 }}
-        className={`w-full z-50 transition-colors duration-300 ${isScrolled ? 'bg-black/50 backdrop-blur-sm' : 'bg-transparent'
+        className={`w-full sticky top-0  z-50 transition-colors duration-300 ${isScrolled ? 'bg-white/50 backdrop-blur-sm' : 'bg-transparent'
           }`}
       >
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">

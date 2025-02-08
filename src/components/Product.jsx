@@ -27,7 +27,7 @@ export default function Product() {
 
   const projects = [
     {
-      title: "XRAY Analyzer",
+      title: "Analytical Process & Quality Control",
       description: "Over 100 man-years of combined experience in servicing",
       icon: <Award className="w-12 h-12" />,
       // stats: "10K+ Visitors",
@@ -36,7 +36,7 @@ export default function Product() {
       image: xray
     },
     {
-      title: "PGNAA Analyzer",
+      title: "RADIATION SERVICES & PRODUCTS",
       description: "PGNAA (Prompt Gamma Neutron Activation Analysis) systems",
       icon: <Star className="w-12 h-12" />,
       // stats: "300% Engagement",
@@ -45,23 +45,23 @@ export default function Product() {
       image: Pgnaa
     },
     // {
-    //   title: "Beluga Experience",
-    //   description: "Premium vodka brand activation with artistic installations",
-    //   icon: <Trophy className="w-12 h-12" />,
-    //   stats: "25+ Markets",
-    //   client: "Beluga",
-    //   year: "2023",
-    //   image: project6
+      // title: "Environmental & Geological Engineering",
+      // description: "Premium vodka brand activation with artistic installations",
+      // icon: <Trophy className="w-12 h-12" />,
+      // // stats: "25+ Markets",
+      // // client: "Beluga",
+      // // year: "2023",
+      // image: project6
     // },
-    // {
-    //   title: "Bantley",
-    //   description: "Premium vodka brand activation with artistic installations",
-    //   icon: '',
-    //   stats: "25+ Markets",
-    //   client: "Bantley",
-    //   year: "2023",
-    //   image: project4
-    // },
+    {
+      title: "Environmental & Geological Engineering",
+      description: "Premium vodka brand activation with artistic installations",
+      icon: '',
+      stats: "25+ Markets",
+      client: "Bantley",
+      year: "2023",
+      image: project4
+    },
     // {
     //   title: "Room",
     //   description: "Premium vodka brand activation with artistic installations",
@@ -120,7 +120,7 @@ export default function Product() {
         {/* import { motion, useScroll, useTransform } from "framer-motion"; */}
 
         {/* Card Layout */}
-        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="relative grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
           {/* Middle Background Layer */}
           {projects.map((project, index) => {
             // Adjust the range to control movement
