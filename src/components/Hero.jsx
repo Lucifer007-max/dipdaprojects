@@ -48,7 +48,7 @@ const Hero = () => {
     <>
       <section id="hero" className="relative h-screen w-full overflow-hidden">
         {/* Video Background */}
-        <div className="absolute z-9">
+        <div className="absolute inset-y-0 ">
           {/* <img src={logo} className='w-100 h-100' /> */}
           <ReactPlayer
             url={logo}
