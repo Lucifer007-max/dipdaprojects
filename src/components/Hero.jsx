@@ -66,7 +66,7 @@ const Hero = () => {
           {/* Image for Mobile */}
           <div className="block md:hidden absolute w-full h-full">
             <img src={home} className="w-full h-full object-cover" alt="Logo" />
-            <div className="absolute inset-0 bg-dark/70" />
+            {/* <div className="absolute inset-0 bg-dark/70" /> */}
           </div>
         </div>
 
