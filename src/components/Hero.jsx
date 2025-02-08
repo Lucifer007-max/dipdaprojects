@@ -15,7 +15,8 @@ import { useMediaQuery } from 'react-responsive';
 import logo from '../assets/videos/bg.mp4'
 import FeatureGrid from './card/FeatureCard';
 import AcquisitionsSection from './card/OurClients';
-import CardGrid from './card/CardGrid';
+// import CardGrid from './card/CardGrid';
+import MultiProductSlider from './card/CardGrid';
 const Hero = () => {
   const sectionRef = useRef(null)
   const aboutUsRef = useRef(null)
@@ -72,7 +73,7 @@ const Hero = () => {
 
 
         {/* Animated Shapes */}
-        <motion.div
+        {/* <motion.div
           animate={{
             rotate: 360,
             scale: [1, 1.2, 1],
@@ -83,10 +84,10 @@ const Hero = () => {
             ease: "linear"
           }}
           className="absolute top-20 right-20 w-64 h-64 border border-primary/20 rounded-full"
-        />
+        /> */}
 
         {/* Content */}
-        <div className="relative z-10 h-full container mx-auto px-4 flex flex-col justify-center">
+        <div className="relative md:flex hidden z-10 h-full container mx-auto px-4  flex-col justify-center">
           <div className="overflow-hidden">
             <motion.h1
               initial="initial"
@@ -98,7 +99,7 @@ const Hero = () => {
                   key={index}
                   {...letterAnimation}
                   transition={{ delay: index * 0.1 }}
-                  className="inline-block hover:text-customOrange transition-colors duration-300"
+                  className="inline-block hover:text-customOrange transition-colors md:text-light text-custom duration-300"
                 >
                   {letter}
                 </motion.span>
@@ -110,7 +111,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 1 }}
-            className="text-xl md:text-2xl text-light/80 font-rajdhani max-w-xl leading-relaxed"
+            className="text-xl md:text-2xl md:text-light/80 text-custom font-rajdhani max-w-xl leading-relaxed"
           >
             Transforming ideas into extraordinary digital experiences through innovative design and cutting-edge technology
           </motion.p>
@@ -357,7 +358,7 @@ const Hero = () => {
       {/* <Media /> */}
       <Product />
 
-      <CardGrid />
+      <MultiProductSlider />
     </>
 
   );

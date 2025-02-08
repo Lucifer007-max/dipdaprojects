@@ -1,81 +1,70 @@
-import { motion } from "framer-motion";
-import { useMediaQuery } from "react-responsive";
+import React from "react";
+import Slider from "react-slick";
 
 const cards = [
-  { title: "Thermo Fisher", bg: "bg-blue-500", img: "https://dlg7f0e93aole.cloudfront.net/wp-content/uploads/Nicolet-iS10-FTIR-Spectrometer.jpg" },
-  { title: "FANR Affiliated", bg: "bg-green-500", img: "https://www.emirates247.com/polopoly_fs/1.702535.1677238865!/image/image.jpg" },
-  { title: "OEM is Bruker", bg: "bg-purple-500", img: "https://www.bruker.com/content/dam/global/logos/logo.svg" },
-  { title: "Frontier TECHNOLOGIES", bg: "bg-red-500", img: "https://th.bing.com/th/id/OIP.AaW3zYtI6TD5Y5jKm3WIRQHaE8?rs=1&pid=ImgDetMain" },
+  {
+    title: "Thermo Fisher",
+    bg: "bg-blue-500",
+    img: "https://dlg7f0e93aole.cloudfront.net/wp-content/uploads/Nicolet-iS10-FTIR-Spectrometer.jpg",
+  },
+  {
+    title: "FANR Affiliated",
+    bg: "bg-green-500",
+    img: "https://www.emirates247.com/polopoly_fs/1.702535.1677238865!/image/image.jpg",
+  },
+  {
+    title: "OEM is Bruker",
+    bg: "bg-purple-500",
+    img: "https://www.bruker.com/content/dam/global/logos/logo.svg",
+  },
+  {
+    title: "Frontier TECHNOLOGIES",
+    bg: "bg-red-500",
+    img: "https://th.bing.com/th/id/OIP.AaW3zYtI6TD5Y5jKm3WIRQHaE8?rs=1&pid=ImgDetMain",
+  },
 ];
 
-const CardGrid = () => {
-  const isSmallScreen = useMediaQuery({ query: '(max-width: 600px)' });
+export default function MultiProductSlider() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3, // Show 3 slides at a time
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024, // Tablet view
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 640, // Mobile view
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
 
   return (
-    <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="relative my-12 md:my-32"
-      >
-        <motion.h2
-          className="text-2xl sm:text-7xl text-dark md:text-7xl  font-bold tracking-tighter leading-none text-center"
-        >
-          <motion.span
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className="inline-block text-4xl md:text-6xl sm:text-4xl  lg:text-7xl "
-          >
-            OUR
-          </motion.span>
-          <motion.span
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="inline-block ml-2 md:ml-4 text-4xl md:text-6xl sm:text-4xl  lg:text-7xl "
-            style={{ WebkitTextStroke: '1px black', color: 'transparent' }}
-          >
-            ASSOCIATION
-          </motion.span>
-        </motion.h2>
-      </motion.div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 w-full">
+    <div className="w-full py-10">
+      <Slider {...settings}>
         {cards.map((card, index) => (
-          <motion.div
-            key={index}
-            className="relative overflow-hidden"
-            // whileHover={ { scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            {/* Background Image */}
+          <div key={index} className="p-4">
             <div
-              className="absolute inset-0 ls:bg-cover bg-contain bg-no-repeat bg-center"
-              style={{ backgroundImage: `url(${card.img})` }}
-            ></div>
-
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black opacity-40"></div>
-
-            {/* Hidden Text (Appears on Hover) */}
-            <motion.div
-              className="absolute inset-0 flex flex-col items-center justify-center text-white text-center opacity-0"
-              whileHover={{ opacity: 1, y: -10 }}
-              whileInView={isSmallScreen ? { opacity: 1, y: -10 } : undefined}
-              transition={{ duration: 0.4 }}
+              className={`rounded-lg shadow-lg overflow-hidden ${card.bg} text-white`}
             >
-              <h2 className="text-3xl font-bold">{card.title}</h2>
-              <p className="mt-2 text-lg">Innovating for a better future.</p>
-            </motion.div>
-
-            {/* Fixed Height */}
-            <div className="h-80"></div>
-          </motion.div>
+              <img src={card.img} alt={card.title} className="w-full h-48 object-cover" />
+              <div className="p-4">
+                <h2 className="text-lg font-bold">{card.title}</h2>
+              </div>
+            </div>
+          </div>
         ))}
-      </div>
-    </>
+      </Slider>
+    </div>
   );
-};
-
-export default CardGrid;
+}

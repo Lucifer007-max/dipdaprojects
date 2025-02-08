@@ -3,8 +3,8 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Award, Star, Trophy } from 'lucide-react'
 import { useRef } from 'react'
-import xray from '../assets/images/product/xray.jpg'
-import Pgnaa from '../assets/images/product/Pgnaa.jpg'
+import xray from '../assets/images/product/pexels-pavel-danilyuk-8442507.jpg'
+import Pgnaa from '../assets/images/product/pexels-ekaterina-bolovtsova-5393559 (1).jpg'
 import project3 from '../assets/images/projects/room-jpg-e1694747063529.webp'
 import project4 from '../assets/images/hero/Environment.jpg'
 import project5 from '../assets/images/projects/davidoff-jpg-e1694747097761.webp'
@@ -27,7 +27,7 @@ export default function Product() {
 
   const projects = [
     {
-      title: "Analytical Process & Quality Control",
+      title: "Sample preparation & Lab Optimization",
       description: "Over 100 man-years of combined experience in servicing",
       icon: <Award className="w-12 h-12" />,
       // stats: "10K+ Visitors",
@@ -36,7 +36,7 @@ export default function Product() {
       image: xray
     },
     {
-      title: "RADIATION SERVICES & PRODUCTS",
+      title: "Process Analyzers @ PGNAA",
       description: "PGNAA (Prompt Gamma Neutron Activation Analysis) systems",
       icon: <Star className="w-12 h-12" />,
       // stats: "300% Engagement",
@@ -54,7 +54,7 @@ export default function Product() {
       // image: project6
     // },
     {
-      title: "Environmental & Geological Engineering",
+      title: "Lab Analyzers",
       description: "Premium vodka brand activation with artistic installations",
       icon: '',
       stats: "25+ Markets",
@@ -154,7 +154,7 @@ export default function Product() {
                     // onTap={{ opacity: 1, y: 0 }} // Mobile tap effect
                     whileInView={isSmallScreen ? { opacity: 1, y: 0 }: undefined}
                     transition={{ duration: 0.3 }}
-                    className="absolute inset-0 bg-gradient-to-t from-customOrange/90 p-6 flex flex-col justify-between"
+                    className="absolute inset-0 bg-gradient-to-t from-customOrange/50 p-6 flex flex-col justify-between"
                   >
                     <div className="space-y-4">
                       <motion.h3
