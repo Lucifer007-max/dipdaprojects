@@ -17,7 +17,7 @@ export default function AcquisitionsSection() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="bg-[#d52c2c] py-20 text-center"
+      className=" py-20 text-center"
     >
       <motion.h2
           className="text-4xl md:text-6xl sm:text-4xl  lg:text-7xl  py-20  font-bold tracking-tighter leading-none text-center"
@@ -26,7 +26,7 @@ export default function AcquisitionsSection() {
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="inline-block text-light"
+            className="inline-block text-dark"
           >
             OUR
           </motion.span>
@@ -35,7 +35,7 @@ export default function AcquisitionsSection() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="inline-block ml-2 md:ml-4"
-            style={{ WebkitTextStroke: '1px white', color: 'transparent' }}
+            style={{ WebkitTextStroke: '1px black', color: 'transparent' }}
           >
             CLIENTS
           </motion.span>

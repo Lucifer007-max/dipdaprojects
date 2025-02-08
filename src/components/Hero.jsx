@@ -8,7 +8,7 @@ import { useEffect, useRef } from 'react';
 import mission from '../assets/images/backgrounds/mission.jpg';
 import QualityVideo from '../assets/videos/quality_control.mp4'
 import radtion from '../assets/videos/radtion.mp4';
-import Media from './media';
+import home from '../assets/videos/home.jpg';
 import { GlowingCard } from './card/GlowingCard';
 import Product from './Product';
 import { useMediaQuery } from 'react-responsive';
@@ -48,19 +48,28 @@ const Hero = () => {
     <>
       <section id="hero" className="relative h-screen w-full overflow-hidden">
         {/* Video Background */}
-        <div className="absolute inset-y-0 ">
-          {/* <img src={logo} className='w-100 h-100' /> */}
-          <ReactPlayer
-            url={logo}
-            playing
-            loop
-            muted
-            width="100%"
-            height="100%"
-            style={{ objectFit: 'cover', background: "rgb(15 17 19)" }}
-          />
-          <div className="absolute inset-0 bg-dark/70" />
+        <div className="absolute w-full h-full">
+          {/* Video for Desktop */}
+          <div className="hidden md:block absolute w-full h-full">
+            <ReactPlayer
+              url={logo}
+              playing
+              loop
+              muted
+              width="100%"
+              height="100%"
+              style={{ objectFit: 'cover', background: "rgb(15 17 19)" }}
+            />
+            <div className="absolute inset-0 bg-dark/70" />
+          </div>
+
+          {/* Image for Mobile */}
+          <div className="block md:hidden absolute w-full h-full">
+            <img src={home} className="w-full h-full object-cover" alt="Logo" />
+            <div className="absolute inset-0 bg-dark/70" />
+          </div>
         </div>
+
 
         {/* Animated Shapes */}
         <motion.div
@@ -319,7 +328,7 @@ const Hero = () => {
       </section>
 
       {/* Bottom Section */}
-      <section className="py-20 bg-[#FCEEE8] ">
+      <section className="py-20 ">
         <motion.h2
           className="text-4xl md:text-6xl sm:text-4xl  lg:text-7xl  py-20  font-bold tracking-tighter leading-none text-center"
         >
@@ -342,13 +351,13 @@ const Hero = () => {
           </motion.span>
         </motion.h2>
         <FeatureGrid />
-        
+
       </section>
       <AcquisitionsSection />
       {/* <Media /> */}
       <Product />
 
-      <CardGrid/>
+      <CardGrid />
     </>
 
   );

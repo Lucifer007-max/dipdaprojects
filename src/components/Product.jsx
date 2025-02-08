@@ -6,7 +6,7 @@ import { useRef } from 'react'
 import xray from '../assets/images/product/xray.jpg'
 import Pgnaa from '../assets/images/product/Pgnaa.jpg'
 import project3 from '../assets/images/projects/room-jpg-e1694747063529.webp'
-import project4 from '../assets/images/projects/bantley-jpg-e1694747011442.webp'
+import project4 from '../assets/images/hero/Environment.jpg'
 import project5 from '../assets/images/projects/davidoff-jpg-e1694747097761.webp'
 import project6 from '../assets/images/projects/beluga-jpg-e1694747132112.webp'
 import { useMediaQuery } from 'react-responsive'
@@ -83,7 +83,7 @@ export default function Product() {
   ]
 
   return (
-    <section ref={containerRef} id="special-projects" className="relative min-h-screen py-20 bg-[#FCEEE8] text-black overflow-hidden">
+    <section ref={containerRef} id="special-projects" className="relative min-h-screen py-20  text-black overflow-hidden">
       <div className="absolute inset-x-0 top-1/3 w-full h-1/3 bg-[#b84e4a] w-4/5"></div>
 
       <motion.div style={{ y }} className="container mx-auto px-4">

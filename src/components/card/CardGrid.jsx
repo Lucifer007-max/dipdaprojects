@@ -4,7 +4,7 @@ import { useMediaQuery } from "react-responsive";
 const cards = [
   { title: "Thermo Fisher", bg: "bg-blue-500", img: "https://dlg7f0e93aole.cloudfront.net/wp-content/uploads/Nicolet-iS10-FTIR-Spectrometer.jpg" },
   { title: "FANR Affiliated", bg: "bg-green-500", img: "https://www.emirates247.com/polopoly_fs/1.702535.1677238865!/image/image.jpg" },
-  { title: "OEM is Bruker", bg: "bg-purple-500", img: "https://th.bing.com/th/id/OIP._cVjP9pru83HwcnDgYTxjAHaEk?rs=1&pid=ImgDetMain" },
+  { title: "OEM is Bruker", bg: "bg-purple-500", img: "https://www.bruker.com/content/dam/global/logos/logo.svg" },
   { title: "Frontier TECHNOLOGIES", bg: "bg-red-500", img: "https://th.bing.com/th/id/OIP.AaW3zYtI6TD5Y5jKm3WIRQHaE8?rs=1&pid=ImgDetMain" },
 ];
 
@@ -51,7 +51,7 @@ const CardGrid = () => {
           >
             {/* Background Image */}
             <div
-              className="absolute inset-0 bg-cover bg-no-repeat bg-center"
+              className="absolute inset-0 ls:bg-cover bg-contain bg-no-repeat bg-center"
               style={{ backgroundImage: `url(${card.img})` }}
             ></div>
 
