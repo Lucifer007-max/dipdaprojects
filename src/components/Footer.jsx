@@ -13,7 +13,16 @@ const Footer = () => {
   ];
 
   const [particles, setParticles] = useState([]);
+  const letters = "SPECTRA".split(""); // Split word into letters
+  const [showFullWord, setShowFullWord] = useState(false);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowFullWord(true);
+      setTimeout(() => setShowFullWord(false), 2000); // Hide full word after 2s
+    }, letters.length * 300 + 3000); // Restart animation loop
 
+    return () => clearInterval(interval);
+  }, []);
   useEffect(() => {
     // Create initial particles with random positions
     const newParticles = Array.from({ length: 10 }).map(() => ({
@@ -30,66 +39,71 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-footer border-t border-light-800">
+    <footer className="bg-footer2 border-t border-light-800">
       <div className="container mx-auto px-4 py-20">
         {/* Top Section */}
-        <div className="grid md:grid-cols-2 gap-12 mb-16 place-items-center">
+        <div className="grid md:grid-cols-4 gap-12 mb-16 place-items-center">
           {/* Logo & Info */}
-          <div className="relative mb-10">
-            {/* Background with moving particles */}
-            {/* <div className="absolute inset-0 z-0">
-                <svg className="absolute inset-0 w-full h-full">
-                  <g>
-                    {particles.map((particle1, index1) => {
-                      return particles.map((particle2, index2) => {
-                        if (index1 !== index2) {
-                          return (
-                            <motion.path
-                              key={`${index1}-${index2}`}
-                              d={getLineCoordinates(particle1, particle2)}
-                              stroke="#000"
-                              strokeWidth="1"
-                              fill="none"
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: 1 }}
-                              transition={{
-                                repeat: Infinity,
-                                repeatType: "loop",
-                                duration: 100 + Math.random() * 2,
-                                ease: "easeInOut",
-                              }}
-                            />
-                          );
-                        }
-                        return null;
-                      });
-                    })}
-                  </g>
-                </svg>
-              </div> */}
-
-            {/* Logo & Info */}
+          <div className="relative mb-10 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="space-y-6 relative z-10"
             >
-              <img
-                src="https://www.geospectratech.com/images/logo.png"
-                width={300}
-                alt="Logo"
-              />
+            <img
+  src="https://www.geospectratech.com/images/logo.png"
+  alt="GeoSpectra Logo"
+  className="mx-auto  drop-shadow-lg filter brightness-200"
+  style={{ filter: "drop-shadow(rgb(255, 255, 255,0.9) 2px 0px 0px)" }}
+/>
+
               <p className="font-outfit text-light-400 leading-relaxed">
                 Creating exceptional digital experiences through innovative design and technology.
               </p>
             </motion.div>
           </div>
+          
 
+          {/* Quick Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="space-y-6 mt-5 text-center"
+            className="w-full text-left"
+          >
+            <h4 className="font-space-grotesk text-xl font-bold mb-4">Quick Links</h4>
+            <ul className="space-y-2 px-3">
+              {['Home', 'Services', 'Projects', 'Contact'].map((item, index) => (
+                <motion.li
+                  key={index}
+                  whileHover={{ x: 5 }}
+                  className="text-light hover:text-black transition-colors  before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-[2px] before:bg-black before:transition-all before:duration-300 hover:before:w-full"
+                >
+                  <a href={`#${item.toLowerCase()}`}>{item}</a>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Location */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="space-y-6 text-left"
+          >
+            <h4 className="font-space-grotesk text-xl font-bold">Location</h4>
+            <p className="">
+              GEOSPECTRA TECHNICAL SERVICES LLC PO Box 214634, <br /> Dubai, United Arab Emirates.
+            </p>
+          </motion.div>
+
+          {/* Follow Us */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="space-y-6 text-center"
           >
             <h4 className="font-space-grotesk text-xl font-bold">Follow us</h4>
             <div className="flex space-x-6 justify-center">
@@ -106,67 +120,8 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Quick Links */}
-
-
-
-
-          {/* Newsletter */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="space-y-6"
-          >
-            <h4 className="font-space-grotesk text-xl font-bold">Newsletter</h4>
-            <div className="relative">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="w-full bg-light border border-gray-800 rounded-lg px-4 py-3 focus:border-primary transition-colors outline-none"
-              />
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                className="absolute right-2 top-1/2 -translate-y-1/2 text-primary"
-              >
-                →
-              </motion.button>
-            </div>
-          </motion.div> */}
         </div>
-        <div className="grid md:grid-cols-2 gap-12 mb-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="w-100"
-          >
-            <h4 className="font-space-grotesk text-xl font-bold text-left mb-4">Quick Links</h4>
-            <ul className="flex">
-              {['Home', 'Services', 'Projects', 'Contact'].map((item, index) => (
-                <motion.li
-                  key={index}
-                  whileHover={{ x: 5 }}
-                  className="text-light mr-4   hover:text-black transition-colors"
-                >
-                  <a href={`#${item.toLowerCase()}`}>{item}</a>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="space-y-6 mt-5 text-center"
-          >
-            <h4 className="font-space-grotesk text-xl font-bold">Location</h4>
-            <div className="flex space-x-6 justify-center">
-              <p>GEOSPECTRA TECHNICAL SERVICES LLC <br /> PO Box 214634, Dubai, United Arab Emirates.</p>
-            </div>
-          </motion.div>
-        </div>
         {/* Bottom Section */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
           <p className="font-outfit text-light">

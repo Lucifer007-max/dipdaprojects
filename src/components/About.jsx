@@ -13,6 +13,7 @@ import Oil from "../assets/images/service/Oil&gas.jpg";
 import Iron from "../assets/images/service/Iron.jpg";
 import Legal from '../assets/images/about/legal.jpg'
 import royal from '../assets/images/about/royality.jpg'
+import CardGrid from './card/CardGrid';
 const About = () => {
   const sectionRef = useRef(null)
   const aboutUsRef = useRef(null)
@@ -266,6 +267,9 @@ const About = () => {
           </div>
         </div>
         <div className='py-10'></div>
+      </section>
+      <section className='overflow-hidden'>
+      <CardGrid/>
       </section>
       {/* NUMBER COUNTER */}
       <section className='conatiner max-w-5xl mx-auto px-6 lg:px-12 py-12 space-y-16'>

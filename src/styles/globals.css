@@ -96,7 +96,7 @@ body {
 
 /* HERO SECTION */
 .text-custom {
-  color:  #b84e4a;
+  color:  #d52c2c;
 }
 
 /* FOOTER */
@@ -111,7 +111,9 @@ body {
   background-color: #FCEEE8;
 }
 
-
+.bg-footer2 {
+  background-color: #d52c2c;
+}
 .counter-number {
   /* font-size: 8rem !important; */
   font-family: system-ui;

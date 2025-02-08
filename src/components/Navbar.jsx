@@ -84,7 +84,7 @@ export default function WillstarNavbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <img src='https://www.geospectratech.com/images/logo.png' width={110} alt='logo' />
+              <img src='https://www.geospectratech.com/images/logo.png' width={150} alt='logo' />
             </motion.div>
           </a>
 
@@ -103,7 +103,7 @@ export default function WillstarNavbar() {
                       navigteByURL(link.path);
                     }
                   }}
-                  className="text-custom hover:text-dark text-sm tracking-wider transition-colors cursor-pointer flex items-center"
+                  className="text-custom hover:text-dark text-md tracking-wider transition-colors cursor-pointer flex items-center"
                   whileHover={{ y: -2 }}
                   whileTap={{ y: 0 }}
                 >

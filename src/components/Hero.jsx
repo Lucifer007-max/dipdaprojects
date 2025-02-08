@@ -12,6 +12,7 @@ import Media from './media';
 import { GlowingCard } from './card/GlowingCard';
 import Product from './Product';
 import { useMediaQuery } from 'react-responsive';
+import logo from '../assets/images/home.jpg'
 const Hero = () => {
   const sectionRef = useRef(null)
   const aboutUsRef = useRef(null)
@@ -45,7 +46,8 @@ const Hero = () => {
       <section id="hero" className="relative h-screen w-full overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0">
-          <ReactPlayer
+        <img src={logo} className='w-100' />
+          {/* <ReactPlayer
             url={video}
             playing
             loop
@@ -53,7 +55,7 @@ const Hero = () => {
             width="100%"
             height="100%"
             style={{ objectFit: 'cover', background: "rgb(15 17 19)" }}
-          />
+          /> */}
           <div className="absolute inset-0 bg-dark/70" />
         </div>
 
@@ -458,7 +460,6 @@ const Hero = () => {
           </div>
         </div>
       </section>
-      {/* Testimonal */}
       <Media />
       <Product />
     </>
