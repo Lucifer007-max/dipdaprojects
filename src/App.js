@@ -69,7 +69,7 @@ function App() {
       {loading ? (
         <Loading />
       ) : (
-        <div className="min-h-screen">
+        <div className="min-h-screen" style={{overflow:'hidden'}}>
           <BrowserRouter>
           <Navbar />
             <Routes>
