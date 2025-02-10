@@ -136,3 +136,7 @@ body {
     height: 300px;
   }
 }
+
+canvas{
+  width: 100% !important;
+}

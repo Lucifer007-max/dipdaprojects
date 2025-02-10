@@ -48,14 +48,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="contacts" className="min-h-screen relative overflow-hidden py-20">
+    <section id="contacts" className="min-h-screen relative overflow-hidden">
       {/* Background Animation */}
       <div className='container mx-auto px-4 relative'>
 
         <Breadcrumb title={'Contact Us'} />
       </div>
-
-      <div className="absolute inset-0 opacity-20">
+      <img src="https://th.bing.com/th/id/OIP.hjIIIqKgi-2B2tWUHtH_JgHaE8?w=1254&h=836&rs=1&pid=ImgDetMain" />
+      <div className="absolute inset-0 opacity-20 py-20">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent" />
         <motion.div
           animate={{

@@ -154,9 +154,9 @@ export default function Product() {
                     // onTap={{ opacity: 1, y: 0 }} // Mobile tap effect
                     whileInView={isSmallScreen ? { opacity: 1, y: 0 }: undefined}
                     transition={{ duration: 0.3 }}
-                    className="absolute inset-0 bg-gradient-to-t from-customOrange/50 p-6 flex flex-col justify-between"
+                    className="absolute inset-0 bg-gradient-to-t from-customOrange/80  p-6 flex flex-col justify-between"
                   >
-                    <div className="space-y-4">
+                    <div className="space-y-4 mt-20">
                       <motion.h3
                         whileHover={{ scale: 1.1 }} // Desktop hover effect
                         whileInView={isSmallScreen ? { scale: 1.1 } : undefined}

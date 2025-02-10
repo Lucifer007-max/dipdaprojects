@@ -17,6 +17,9 @@ import FeatureGrid from './card/FeatureCard';
 import AcquisitionsSection from './card/OurClients';
 // import CardGrid from './card/CardGrid';
 import MultiProductSlider from './card/CardGrid';
+// import Globe from './Globe/Globe';
+// import GlowingGlobe from './Globe/Globe';
+import GlobeComponent from './Globe/Globe';
 const Hero = () => {
   const sectionRef = useRef(null)
   const aboutUsRef = useRef(null)
@@ -223,6 +226,37 @@ const Hero = () => {
         </div>
       </section>
 
+      <section className="flex flex-col md:flex-row items-center justify-between gap-8 px-6 md:px-12 lg:px-24 py-12">
+        {/* Left Section: Text */}
+        <div className="w-full md:w-1/2 border-l-4 border-red-500 pl-3">
+          <motion.h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none">
+            <motion.span
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="inline-block text-dark"
+            >
+              OUR
+            </motion.span>
+            <motion.span
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="inline-block ml-2 md:ml-4"
+              style={{ WebkitTextStroke: "1px black", color: "transparent" }}
+            >
+              PRESENCE
+            </motion.span>
+          </motion.h2>
+        </div>
+
+        {/* Right Section: Globe */}
+        <div className="w-full md:w-1/2 flex justify-center">
+          <GlobeComponent />
+        </div>
+      </section>
+
+      
       {/* Combined Hero and Advantages Section with Background */}
       <section
         ref={sectionRef}
