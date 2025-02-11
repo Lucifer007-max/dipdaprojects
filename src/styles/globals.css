@@ -138,9 +138,6 @@ body {
   .aspect_set{
     aspect-ratio: 3 / 2;
   }
-  .image-container {
-    height: 290px;
-   }
 }
 
 canvas{
