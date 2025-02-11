@@ -239,7 +239,7 @@ const Hero = () => {
         </div>
       </section>
 
-      <section className="flex flex-col md:flex-row items-center justify-between gap-8 px-6 md:px-12 lg:px-24 py-12">
+      <section className="flex flex-col md:flex-row items-center overflow-hidden  justify-between gap-8 px-6 md:px-12 lg:px-24 py-12">
         {/* Left Section: Text */}
         <div className="w-full md:w-1/2 border-l-4 border-red-500 pl-3">
           <motion.h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none">

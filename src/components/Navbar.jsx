@@ -74,8 +74,7 @@ export default function WillstarNavbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: 'spring', stiffness: 50 }}
-        className={`w-full sticky top-0  z-50 transition-colors duration-300 ${isScrolled ? 'bg-white/100 backdrop-blur-sm top-10' : 'bg-white/100 '
-          }`}
+        className={`w-full sticky top-0 z-50 transition-colors duration-300 ${isScrolled ? 'bg-white/100 backdrop-blur-sm' : 'bg-white/100'}`}
       >
         <div className="container mx-auto px-6 py-0 flex justify-between items-center">
           <a href="/" className="relative z-50">
@@ -84,7 +83,7 @@ export default function WillstarNavbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <img src='https://www.geospectratech.com/images/logo.png' width={150} alt='logo' />
+              <img src='https://www.geospectratech.com/images/logo.png' width={200} alt='logo' />
             </motion.div>
           </a>
 
@@ -103,7 +102,7 @@ export default function WillstarNavbar() {
                       navigteByURL(link.path);
                     }
                   }}
-                  className="text-custom hover:text-dark text-md tracking-wider transition-colors cursor-pointer flex items-center"
+                  className="text-custom hover:text-dark text-lg tracking-wider transition-colors cursor-pointer flex items-center"
                   whileHover={{ y: -2 }}
                   whileTap={{ y: 0 }}
                 >
