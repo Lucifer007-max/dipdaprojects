@@ -12,14 +12,14 @@ export const services = [
     description: "GeoSpectra Technical Services LLC, having its registered office in Dubai, United Arab Emirates, focuses on providing high-end, cost-effective technical & application support to a range of Analytical Instruments (such as XRF/XRD/OES Analyzers) in “Mission Critical” environments. We also provide products and services in the field of Radiation Technology (Radio Isotopes supply and radioactive waste management) and in the field of Environmental & Geological Engineering.",
     icon: <FlagTriangleLeft className="w-8 h-8" />,
     gridClass: "md:col-span-1 row-span-1",
-    bgClass: "bg-gradient-to-br from-green-600/30 to-green-900/30",
+    bgClass: "bg-gradient-to-br from-red-600/30 to-red-900/30",
   },
   {
     title: "Vision",
     description: "To be a globally recognized leader in delivering innovative and reliable technical solutions for analytical instruments, radiation technology, and environmental and geological engineering. We aim to set the benchmark for excellence in mission-critical environments by ensuring sustainability, safety, and efficiency in every project we undertake.",
     icon: <Eye className="w-8 h-8" />,
     gridClass: "md:col-span-1 row-span-1",
-    bgClass: "bg-gradient-to-br from-yellow-600/30 to-yellow-900/30",
+    bgClass: "bg-gradient-to-br from-red-600/30 to-red-900/30",
   },
 
 ]
@@ -187,3 +187,192 @@ export const accordionData = [
       "GeoSpectra monitors your equipment calibration on-site or remotely, making necessary adjustments to maintain accuracy and compliance.",
   },
 ];
+
+
+export const globeData = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Algeria",
+        "adm0name": "Algeria",
+        "latitude": 28.0339,
+        "longitude": 1.6596,
+        "pop_max": 43851044
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.6596, 28.0339]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Egypt",
+        "adm0name": "Egypt",
+        "latitude": 26.8206,
+        "longitude": 30.8025,
+        "pop_max": 102334404
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.8025, 26.8206]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jordan",
+        "adm0name": "Jordan",
+        "latitude": 30.5852,
+        "longitude": 36.2384,
+        "pop_max": 10203134
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.2384, 30.5852]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nigeria",
+        "adm0name": "Nigeria",
+        "latitude": 9.082,
+        "longitude": 8.6753,
+        "pop_max": 206139589
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8.6753, 9.082]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lebanon",
+        "adm0name": "Lebanon",
+        "latitude": 33.8547,
+        "longitude": 35.8623,
+        "pop_max": 6825442
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [35.8623, 33.8547]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ethiopia",
+        "adm0name": "Ethiopia",
+        "latitude": 9.145,
+        "longitude": 40.4897,
+        "pop_max": 114963588
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [40.4897, 9.145]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Morocco",
+        "adm0name": "Morocco",
+        "latitude": 31.7917,
+        "longitude": -7.0926,
+        "pop_max": 36910560
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-7.0926, 31.7917]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Yemen",
+        "adm0name": "Yemen",
+        "latitude": 15.5527,
+        "longitude": 48.5164,
+        "pop_max": 29825964
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.5164, 15.5527]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Oman",
+        "adm0name": "Oman",
+        "latitude": 21.4735,
+        "longitude": 55.9754,
+        "pop_max": 5106626
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [55.9754, 21.4735]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Libya",
+        "adm0name": "Libya",
+        "latitude": 26.3351,
+        "longitude": 17.2283,
+        "pop_max": 6871292
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [17.2283, 26.3351]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pakistan",
+        "adm0name": "Pakistan",
+        "latitude": 30.3753,
+        "longitude": 69.3451,
+        "pop_max": 220892340
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [69.3451, 30.3753]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Saudi Arabia",
+        "adm0name": "Saudi Arabia",
+        "latitude": 23.8859,
+        "longitude": 45.0792,
+        "pop_max": 34813871
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [45.0792, 23.8859]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "India",
+        "adm0name": "India",
+        "latitude": 20.5937,
+        "longitude": 78.9629,
+        "pop_max": 1393409038
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.9629, 20.5937]
+      }
+    }
+  ]
+}

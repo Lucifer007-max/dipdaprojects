@@ -68,9 +68,22 @@ const Hero = () => {
           </div>
 
           {/* Image for Mobile */}
-          <div className="block md:hidden absolute w-full h-full">
-            <img src={home} className="w-full h-full object-cover" alt="Logo" />
-            {/* <div className="absolute inset-0 bg-dark/70" /> */}
+          <div className="block md:hidden absolute w-full h-full overflow-hidden">
+            <motion.img
+              src="https://www.in-housecnc.com/wp-content/uploads/2023/07/inhouse-cnc-blog-cnc-safety-e1689984072943.jpg"
+              className="w-full h-full object-cover"
+              alt="Logo"
+              initial={{ scale: 1, x: 0 }} // Start at normal scale and position
+              animate={{
+                scale: [1, 1.2, 1], // Zoom in and out
+                x: ["0%", "-5%", "0%"], // Slight left shift and back
+              }}
+              transition={{
+                duration: 10, // Time for each cycle
+                repeat: Infinity, // Infinite loop
+                ease: "easeInOut",
+              }}
+            />
           </div>
         </div>
 
@@ -256,7 +269,7 @@ const Hero = () => {
         </div>
       </section>
 
-      
+
       {/* Combined Hero and Advantages Section with Background */}
       <section
         ref={sectionRef}

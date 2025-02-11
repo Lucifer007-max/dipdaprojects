@@ -135,8 +135,48 @@ body {
   .h-common {
     height: 300px;
   }
+  .aspect_set{
+    aspect-ratio: 3 / 2;
+  }
+  .image-container {
+    height: 290px;
+   }
 }
 
 canvas{
   width: 100% !important;
+}
+
+
+.image-container {
+  position: relative;
+  width: 100%;
+  /* max-width: 100%; Adjust size as needed */
+  /* height: 290px; */
+  overflow: hidden;
+  
+}
+
+.image-container img {
+  overflow: hidden;
+  width: 100%;
+  /* height: 290px; */
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(0, 0, 0, 0.5); Black overlay with transparency */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px; /* Adjust text positioning */
+  color: white;
+
+  font-size: 24px;
+  font-weight: 900;
 }

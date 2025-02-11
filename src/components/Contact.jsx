@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 import Breadcrumb from './Breadcrumb/Breadcrumb';
-
+import contactBG from '../assets/images/backgrounds/contactBG.png'
 const Contact = () => {
   const [showPopup, setShowPopup] = useState(false);
   const formFields = [
@@ -54,7 +54,18 @@ const Contact = () => {
 
         <Breadcrumb title={'Contact Us'} />
       </div>
-      <img src="https://th.bing.com/th/id/OIP.hjIIIqKgi-2B2tWUHtH_JgHaE8?w=1254&h=836&rs=1&pid=ImgDetMain" />
+      <div class="image-container">
+        <img src={contactBG} alt="Overlay Image" />
+        <motion.h2
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="font-syncopate overlay text-4xl md:text-6xl sm:text-4xl lg:text-7xl font-bold mb-20 tracking-wider text-custom"
+          style={{ color: 'black', fontFamily: 'system-ui' }}
+        >
+          Consulting meets<br /> Transformation
+        </motion.h2>
+        {/* <div class="overlay"></div> */}
+      </div>
       <div className="absolute inset-0 opacity-20 py-20">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent" />
         <motion.div
@@ -175,9 +186,9 @@ const Contact = () => {
           </motion.div>
 
 
-          </div>
-          <div>
-            <iframe className='mt-5' src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1805.450547454451!2d55.25879161491412!3d25.172817251024316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDEwJzIyLjAiTiA1NcKwMTUnMzQuNCJF!5e0!3m2!1sen!2sin!4v1453974743604' allowfullscreen width="100%" height={"400px"} frameborder="0"/>
+        </div>
+        <div>
+          <iframe className='mt-5' src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1805.450547454451!2d55.25879161491412!3d25.172817251024316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDEwJzIyLjAiTiA1NcKwMTUnMzQuNCJF!5e0!3m2!1sen!2sin!4v1453974743604' allowfullscreen width="100%" height={"400px"} frameborder="0" />
         </div>
       </div>
 
