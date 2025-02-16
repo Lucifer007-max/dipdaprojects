@@ -20,6 +20,7 @@ import Training from './components/Training';
 import Service from './components/PGNAAservice';
 import PGNAAService from './components/PGNAAservice';
 import XRayservice from './components/XRayservice';
+import RadiationProducts from './components/RadiationProducts';
 // import
 function App() {
   const [loading, setLoading] = useState(true);
@@ -81,9 +82,10 @@ function App() {
               <Route path="/training" key="expertise" element={<Training />} />
               <Route path="/service/pgnaa-service" key="service" element={<PGNAAService />} />
               <Route path="/service/xray-service" key="service" element={<XRayservice />} />
+              <Route path="/product/radiation-product" key="service" element={<RadiationProducts />} />
               {/* <Route path="/about" key="about" element={<AboutUs />} />
-              <Route path="/service/xray-analyzer" key="xray-analyzer" element={<AboutUs />} />
               <Route path="/service/pgnaa-analyzer" key="pgnaa-analyzer" element={<AboutUs />} />
+              <Route path="/service/xray-analyzer" key="xray-analyzer" element={<AboutUs />} />
               <Route path="/product/xrf-sample-preperation-product" key="xrf-sample-preperation-product" element={<AboutUs />} /> */}
               {/* <Route path="/product/radiation-isotope-products" key="radiation-isotope-products" element={<XRF />} /> */}
 

@@ -20,10 +20,10 @@ const navLinks = [
     title: "PRODUCT",
     path: "product",
     children: [
-      { title: "Process Analyzers @ PGNAA", path: "/product/product-b" },
+      { title: "Process Analyzers @ PGNAA", path: "/product/pgnaa-product" },
       { title: "Lab Analyzers" , path: "/product/product-c" },
       { title: "Sample preparation & Lab Optimization", path: "/product/product-a" },
-      { title: "Radioactive Nuclide" , path: "/product/product-c" },
+      { title: "Radioactive Nuclide" , path: "/product/radiation-product" },
     ],
   },
   { title: "TRAINING", path: "training" },
@@ -103,7 +103,7 @@ export default function WillstarNavbar() {
                       navigteByURL(link.path);
                     }
                   }}
-                  className="text-custom hover:text-dark text-lg tracking-wider transition-colors cursor-pointer flex items-center"
+                  className="text-custom hover:text-dark text-md tracking-wider transition-colors cursor-pointer flex items-center"
                   whileHover={{ y: -2 }}
                   whileTap={{ y: 0 }}
                 >

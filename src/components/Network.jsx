@@ -86,11 +86,9 @@ const NetWork = () => {
                         At Spectra, we take pride in our extensive geographical presence, delivering top-tier services across multiple regions. Our expertise spans North Africa, the Middle East, and South Asia, ensuring our clients receive tailored solutions backed by industry-leading experience.
 
                         We are actively engaged in Algeria, Egypt, Jordan, Nigeria, Lebanon, Ethiopia, Morocco, Yemen, Oman, Libya, Pakistan, Saudi Arabia, Senegal, Qatar, Tanzania, Tunisia, Turkey, South Africa, UAE, India, Zambia, and Turkmenistan. Through our robust network and strategic partnerships, we bring cutting-edge solutions to these regions, addressing diverse market needs and industry challenges.
-
-
                     </motion.p>
                 </motion.section>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 py-20 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 py-20 gap-6">
                     {jsonData.features.map((feature, index) => (
                         <motion.div
                             key={index}

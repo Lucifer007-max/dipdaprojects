@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { Award, Star, Trophy } from 'lucide-react'
+import { Award,  Star, Trophy } from 'lucide-react'
 import { useRef } from 'react'
 import xray from '../assets/images/product/pexels-pavel-danilyuk-8442507.jpg'
 import Pgnaa from '../assets/images/product/pexels-ekaterina-bolovtsova-5393559 (1).jpg'
@@ -10,6 +10,7 @@ import project4 from '../assets/images/hero/Environment.jpg'
 import project5 from '../assets/images/projects/davidoff-jpg-e1694747097761.webp'
 import project6 from '../assets/images/projects/beluga-jpg-e1694747132112.webp'
 import { useMediaQuery } from 'react-responsive'
+import { Link } from 'react-router-dom'
 
 
 export default function Product() {
@@ -131,11 +132,11 @@ export default function Product() {
                         whileHover={{ scale: 1.1 }} // Desktop hover effect
                         whileInView={isSmallScreen ? { scale: 1.1 } : undefined}
                         // onTap={{ scale: 1.1 }} // Mobile tap effect
-                        className="text-dark text-3xl font-bold"
+                        className="text-light text-3xl font-bold"
                       >
                         {project.title}
                       </motion.h3>
-                      <p className="text-dark">{project.description}</p>
+                      <p className="text-light">{project.description}</p>
                     </div>
 
                     <div className="space-y-4">
@@ -143,8 +144,12 @@ export default function Product() {
                         whileHover={{ scale: 1.05 }} // Desktop hover effect
                         whileInView={isSmallScreen ? { scale: 0.95 } : undefined}
                         className="w-full px-6 py-3 bg-custom text-white rounded-lg font-medium"
+                        
                       >
+                      <Link to='/product/radiation-product'>
+
                         View Service
+                      </Link>
                       </motion.button>
                     </div>
                   </motion.div>

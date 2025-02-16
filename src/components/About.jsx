@@ -11,8 +11,8 @@ import Power from "../assets/images/service/power.jpg";
 import Mineral from "../assets/images/service/Mineral.jpg";
 import Oil from "../assets/images/service/Oil&gas.jpg";
 import Iron from "../assets/images/service/Iron.jpg";
-import Legal from '../assets/images/about/legal.jpg'
-import royal from '../assets/images/about/royality.jpg'
+import Legal from '../assets/images/about/glass.jpg'
+import royal from '../assets/images/about/petrochemical.jpg'
 import CardGrid from './card/CardGrid';
 const About = () => {
   const sectionRef = useRef(null)
@@ -86,8 +86,8 @@ const About = () => {
     { src: Mineral, alt: "Mineral", title: 'Mineral' },
     { src: Oil, alt: "Oil & Gas", title: 'Oil & Gas' },
     { src: Iron, alt: "Iron & Steel", title: 'Iron & Steel' },
-    { src: Legal, alt: "Lubrication & Glass Manufacturing", title: 'Lubrication & Glass Manufacturing' },
-    { src: royal, alt: "Petrochemical", title: 'Petrochemical' },
+    { src: Legal, alt: "Lubrication & Glass Manufacturing", title: 'Lubrication & Glass Manufacture' },
+    { src: royal, alt: "Petrochemical", title: 'Petro Chemical' },
   ];
  
   const yValues = [

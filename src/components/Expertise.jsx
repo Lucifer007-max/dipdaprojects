@@ -7,7 +7,7 @@ import Xrays from '../assets/images/product/xrayexperties.jpg'
 const Expertise = () => {
     return (
         <>
-            <section className="relative container mx-auto px-4 pt-20">
+            <section className="relative container mx-auto px-4">
 
                 <Breadcrumb title={'Our Expertise'} />
                 <motion.section
@@ -50,7 +50,7 @@ const Expertise = () => {
                     </motion.p>
                 </motion.section>
             </section>
-            <sction className="bg-[#FCEEE8]">
+            <sction>
                 <div className='relative container mx-auto px-4 "'>
                     <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 py-20 gap-6">
                         <section className="py-20">
