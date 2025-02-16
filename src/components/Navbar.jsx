@@ -20,9 +20,10 @@ const navLinks = [
     title: "PRODUCT",
     path: "product",
     children: [
-      { title: "Product A", path: "/product/product-a" },
-      { title: "Product B", path: "/product/product-b" },
-      { title: "Product C", path: "/product/product-c" },
+      { title: "Process Analyzers @ PGNAA", path: "/product/product-b" },
+      { title: "Lab Analyzers" , path: "/product/product-c" },
+      { title: "Sample preparation & Lab Optimization", path: "/product/product-a" },
+      { title: "Radioactive Nuclide" , path: "/product/product-c" },
     ],
   },
   { title: "TRAINING", path: "training" },

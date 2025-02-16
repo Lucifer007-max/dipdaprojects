@@ -6,6 +6,7 @@ import { MapContainer, Popup, TileLayer } from "react-leaflet";
 import { Marker } from "react-leaflet/Marker";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import { useMediaQuery } from 'react-responsive';
 const NetWork = () => {
     const sourceId = "places";
     const symbolLayerId = "symbols";
@@ -43,6 +44,7 @@ const NetWork = () => {
     ];
     const zoom = 3;
     const [map, setMap] = useState(null);
+    const isSmallScreen = useMediaQuery({ query: '(max-width: 600px)' });
 
     return (
         <>
@@ -90,14 +92,12 @@ const NetWork = () => {
                 </motion.section>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 py-20 gap-6">
                     {jsonData.features.map((feature, index) => (
-
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.1 }}
                             className="group bg-white/10 relative backdrop-blur-sm rounded-lg p-2 border border-white/10 hover:border-white/20 transition-all duration-300 shadow-lg hover:shadow-xl"
-
                         >
                             {/* Card Content */}
                             <motion.div
@@ -105,17 +105,18 @@ const NetWork = () => {
                                 whileHover={{ y: -10 }}
                                 style={{ color: feature.color }}
                             >
-                                <img width="100%"
+                                <img
+                                    width="100%"
                                     src={`/flags/${feature.properties.id.toLowerCase()}.svg`}
                                     alt={`${feature.properties.name.countryCode} Flag`}
-                                    style={{ height: '150px', objectFit: 'cover' }} />
-                                {/* {feature.title} */}
+                                    style={{ height: '150px', objectFit: 'cover' }}
+                                />
+
                                 <motion.div
-                                    initial={{ opacity: 0, y: 50 }}
-                                    whileHover={{ opacity: 1, y: 0 }} // Desktop hover effect
-                                    // whileInView={{ opacity: 1, y: 0 }} // Mobile auto-reveal
+                                    initial={{ opacity: isSmallScreen ? 1 : 0, y: isSmallScreen ? 0 : 50 }}
+                                    whileHover={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.4 }}
-                                    className="absolute inset-0 bg-gradient-to-t from-customOrange/60  p-6 flex flex-col justify-center"
+                                    className="absolute inset-0 bg-gradient-to-t from-customOrange/60 p-6 flex flex-col justify-center"
                                 >
                                     <motion.h3
                                         whileHover={{ scale: 1.1 }}

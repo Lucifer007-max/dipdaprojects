@@ -27,15 +27,6 @@ export default function Product() {
 
   const projects = [
     {
-      title: "Sample preparation & Lab Optimization",
-      description: "Over 100 man-years of combined experience in servicing",
-      icon: <Award className="w-12 h-12" />,
-      // stats: "10K+ Visitors",
-      // client: "Mercedes-Benz",
-      // year: "2023",
-      image: xray
-    },
-    {
       title: "Process Analyzers @ PGNAA",
       description: "PGNAA (Prompt Gamma Neutron Activation Analysis) systems",
       icon: <Star className="w-12 h-12" />,
@@ -44,47 +35,26 @@ export default function Product() {
       // year: "2023",
       image: Pgnaa
     },
-    // {
-      // title: "Environmental & Geological Engineering",
-      // description: "Premium vodka brand activation with artistic installations",
-      // icon: <Trophy className="w-12 h-12" />,
-      // // stats: "25+ Markets",
-      // // client: "Beluga",
-      // // year: "2023",
-      // image: project6
-    // },
     {
       title: "Lab Analyzers",
       description: "Premium vodka brand activation with artistic installations",
-      icon: '',
-      stats: "25+ Markets",
-      client: "Bantley",
-      year: "2023",
       image: project4
     },
-    // {
-    //   title: "Room",
-    //   description: "Premium vodka brand activation with artistic installations",
-    //   icon: <Trophy className="w-12 h-12" />,
-    //   stats: "25+ Markets",
-    //   client: "Room",
-    //   year: "2022",
-    //   image: project3
-    // },
-    // {
-    //   title: "Davidoff",
-    //   description: "Premium vodka brand activation with artistic installations",
-    //   icon: <Trophy className="w-12 h-12" />,
-    //   stats: "25+ Markets",
-    //   client: "Davidoff",
-    //   year: "2023",
-    //   image: project3
-    // }
+    {
+      title: "Sample preparation & Lab Optimization",
+      description: "Over 100 man-years of combined experience in servicing",
+      image: xray
+    },
+    {
+      title: "Radioactive Nuclide",
+      description: "We provide solutions to the end-users with regards to industrial source supply with turn-key services",
+      image: project3
+    }
   ]
 
   return (
     <section ref={containerRef} id="special-projects" className="relative min-h-screen py-20  text-black overflow-hidden">
-      <div className="absolute inset-x-0 top-1/3 w-full h-1/3 bg-[#b84e4a] w-4/5"></div>
+      <div className="absolute inset-x-0 top-1/3 w-full h-1/3 bg-[#b84e4a]"></div>
 
       <motion.div style={{ y }} className="container mx-auto px-4">
         {/* Header Section */}
@@ -120,7 +90,7 @@ export default function Product() {
         {/* import { motion, useScroll, useTransform } from "framer-motion"; */}
 
         {/* Card Layout */}
-        <div className="relative grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
+        <div className="relative grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
           {/* Middle Background Layer */}
           {projects.map((project, index) => {
             // Adjust the range to control movement

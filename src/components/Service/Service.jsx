@@ -31,7 +31,7 @@ export default function Service({ title, content, pageTitle, TagLine }) {
   const isSmallScreen = useMediaQuery({ query: '(max-width: 600px)' });
 
   return (
-    <section id="production" className="relative min-h-screen pt-20 bg-white text-white overflow-hidden">
+    <section id="production" className="relative min-h-screen  bg-white text-white overflow-hidden">
       <div className='container mx-auto'>
         <Breadcrumb title={title} />
 

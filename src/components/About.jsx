@@ -42,7 +42,7 @@ const About = () => {
 
   const counters = [
     { id: 1, value: 25, label: "Years of Experience", icon: Rocket },
-    { id: 2, value: 500, label: "Total Clients", icon: Users },
+    { id: 2, value: 200, label: "Total Clients", icon: Users },
     { id: 3, value: 15, label: "Years in Business", icon: Clock },
   ];
 
@@ -86,8 +86,8 @@ const About = () => {
     { src: Mineral, alt: "Mineral", title: 'Mineral' },
     { src: Oil, alt: "Oil & Gas", title: 'Oil & Gas' },
     { src: Iron, alt: "Iron & Steel", title: 'Iron & Steel' },
-    { src: Legal, alt: "Our Legality", title: 'Our Legality' },
-    { src: royal, alt: "Our Royality", title: 'Our Royality' },
+    { src: Legal, alt: "Lubrication & Glass Manufacturing", title: 'Lubrication & Glass Manufacturing' },
+    { src: royal, alt: "Petrochemical", title: 'Petrochemical' },
   ];
  
   const yValues = [
@@ -102,7 +102,7 @@ const About = () => {
 
   return (
     <section ref={sectionRef}>
-      <motion.div className="relative container mx-auto px-4 pt-20" ref={aboutUsRef}>
+      <motion.div className="relative container mx-auto px-4 " ref={aboutUsRef}>
         {/* BREADCRUM */}
         <Breadcrumb title="About SPECTAR" />
         {/* ABOUT , SERVICE & CEO SECTION */}
