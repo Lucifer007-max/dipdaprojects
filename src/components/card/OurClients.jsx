@@ -82,7 +82,9 @@ export default function AcquisitionsSection() {
   const xLeftToRight = useTransform(scrollYProgress, [0, 1], ["-100%", "50%"]);
   const xRightToLeft = useTransform(scrollYProgress, [0, 1], ["100%", "-100%"]);
   const xLeftToRight2 = useTransform(scrollYProgress, [0, 1], ["-150%", "50%"]);
-
+  const xLeftToRight3 = useTransform(scrollYProgress, [0, 1], ["-150%", "100%"]);
+  const xRightToLeft4 = useTransform(scrollYProgress, [0, 1], ["150%", "-150%"]);
+  
   return (
     <div ref={sectionRef}>
 
@@ -133,6 +135,24 @@ export default function AcquisitionsSection() {
               <img key={i} src={client.image} alt="Client" className="h-20 object-contain aspect_set" />
             ))}
           </motion.div>
+          <div className="py-10"></div>
+
+
+
+
+          <motion.div style={{ x: xRightToLeft }} className="flex space-x-10">
+            {acquisition2s.map((client, i) => (
+              <img key={i} src={client.image} alt="Client" className="h-20 object-contain aspect_set" />
+            ))}
+          </motion.div>
+
+          <div className="py-10"></div>
+          <motion.div style={{ x: xLeftToRight3 }} className="flex space-x-10">
+            {acquisitions.map((client, i) => (
+              <img key={i} src={client.image} alt="Client" className="h-20 object-contain aspect_set" />
+            ))}
+          </motion.div>
+          <div className="py-10"></div>
         </div>
 
       </motion.section>
