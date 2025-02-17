@@ -15,13 +15,12 @@ const navLinks = [
       { title: "X-Ray Service", path: "/service/xray-service" },
     ],
   },
-  // { title: "PRODUCT", path: "product" },
   {
     title: "PRODUCT",
     path: "product",
     children: [
       { title: "Process Analyzers @ PGNAA", path: "/product/pgnaa-product" },
-      { title: "Lab Analyzers" , path: "/product/product-c" },
+      { title: "Elemental Analyzers" , path: "/product/product-c" },
       { title: "Sample preparation & Lab Optimization", path: "/product/product-a" },
       { title: "Radioactive Nuclide" , path: "/product/radiation-product" },
     ],
@@ -185,7 +184,7 @@ export default function WillstarNavbar() {
                   animate={{ x: 0, opacity: 1 }}
                   exit={{ x: "-100%", opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="flex flex-col space-y-6"
+                  className="flex flex-col space-y-6 mt-20"
                 >
                   {navLinks.map((link) => (
                     <motion.div key={link.title}>
@@ -226,7 +225,7 @@ export default function WillstarNavbar() {
                     {/* Back Button */}
                     <motion.button
                       onClick={() => setActiveMenu("main")}
-                      className="text-xl font-bold text-dark flex items-center space-x-2 mb-4"
+                      className="text-xl mt-20 font-bold text-dark flex items-center space-x-2 mb-4"
                     >
                       ← Back
                     </motion.button>

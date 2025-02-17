@@ -34,9 +34,9 @@ const Training = () => {
     ];
     return (
         <>
-            <section className="relative container mx-auto px-4 pt-20">
+            <section className="relative container mx-auto px-4">
 
-                <Breadcrumb title={'Our Expertise'} />
+                <Breadcrumb title={'Our Training'} />
                 <motion.section
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}

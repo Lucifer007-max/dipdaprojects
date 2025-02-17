@@ -1,4 +1,4 @@
-import { Eye, FlagTriangleLeft } from "lucide-react";
+import { Eye, FlagTriangleLeft, Workflow } from "lucide-react";
 import time from '../assets/images/product/247.jpg'
 import ENG from "../assets/images/product/dedicated.jpg"
 import Traning from "../assets/images/product/training.jpg"
@@ -376,3 +376,23 @@ export const globeData = {
     }
   ]
 }
+
+
+export const expertiesCards = [
+
+  {
+    title: "Our purpose",
+    description: "ABB’s purpose is to enable a more sustainable and resource-efficient future with our technology leadership in electrification and automation. Our purpose is why we are in business. It expresses both what we stand for as a company and what we aspire to be in the future. Make our purpose part of your story.",
+    gridClass: "md:col-span-1 row-span-1",
+    // icon: < className="w-8 h-8" />,
+    bgClass: "bg-gradient-to-br from-red-600/30 to-red-900/30",
+  },
+  // {
+  //   title: "PGNAA Analyzer",
+  //   description: "A Team with over 100 man-years of experience in PGNAA, who have in the past, have worked with various original equipment manufacturers at senior positions. Our team brings over 100 man-years of experience in PGNAA, having worked in senior positions with various original equipment manufacturers. As Sales & Service Managers at Thermo Fisher Scientific PGNAA systems, we have sold and supported over 150 systems across the Middle East, Africa, and worldwide. As Senior Service Engineers at Thermo Fisher Scientific, we have provided expert support for more than 150 systems, including BMA, CBA, CBGN, CBX, OMNI, FSA, and EBA. Our experience extends further as Senior Field Engineers specializing in PGNAA, having worked with Thermo Fisher, Scantech, and other leading manufacturers. In addition, as Field Service Engineers, the seamless operation of PGNAA solutions.",
+  //   // icon: <Eye className="w-8 h-8" />,
+  //   gridClass: "md:col-span-1 row-span-1",
+  //   bgClass: "bg-gradient-to-br from-red-600/30 to-red-900/30",
+  // },
+
+]

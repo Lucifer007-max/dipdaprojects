@@ -48,7 +48,7 @@ const NetWork = () => {
 
     return (
         <>
-            <section className="relative container mx-auto px-4 pt-20">
+            <section className="relative container mx-auto px-4">
 
                 <Breadcrumb title={'Our Network'} />
                 <motion.section
@@ -88,7 +88,7 @@ const NetWork = () => {
                         We are actively engaged in Algeria, Egypt, Jordan, Nigeria, Lebanon, Ethiopia, Morocco, Yemen, Oman, Libya, Pakistan, Saudi Arabia, Senegal, Qatar, Tanzania, Tunisia, Turkey, South Africa, UAE, India, Zambia, and Turkmenistan. Through our robust network and strategic partnerships, we bring cutting-edge solutions to these regions, addressing diverse market needs and industry challenges.
                     </motion.p>
                 </motion.section>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 py-20 gap-6">
+                {/* <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-6 py-20 gap-6">
                     {jsonData.features.map((feature, index) => (
                         <motion.div
                             key={index}
@@ -97,7 +97,6 @@ const NetWork = () => {
                             transition={{ delay: index * 0.1 }}
                             className="group bg-white/10 relative backdrop-blur-sm rounded-lg p-2 border border-white/10 hover:border-white/20 transition-all duration-300 shadow-lg hover:shadow-xl"
                         >
-                            {/* Card Content */}
                             <motion.div
                                 className="text-xl md:text-2xl font-bold mb-3"
                                 whileHover={{ y: -10 }}
@@ -125,13 +124,12 @@ const NetWork = () => {
                                 </motion.div>
                             </motion.div>
 
-                            {/* Divider with Hover Effect */}
                             <motion.div
                                 className="h-0.5 bg-gradient-to-r from-transparent via-white/20 to-transparent mt-4 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
                             />
                         </motion.div>
                     ))}
-                </div>
+                </div> */}
 
                 {/* <div className="flex-1 grid grid-cols-2 grid-rows-2 gap-2 bg-purple-600 p-8">
                     {["Americas", "Asia Pacific", "Europe", "Middle East and Africa"].map(
