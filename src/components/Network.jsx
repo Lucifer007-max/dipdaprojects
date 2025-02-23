@@ -88,7 +88,7 @@ const NetWork = () => {
                         We are actively engaged in Algeria, Egypt, Jordan, Nigeria, Lebanon, Ethiopia, Morocco, Yemen, Oman, Libya, Pakistan, Saudi Arabia, Senegal, Qatar, Tanzania, Tunisia, Turkey, South Africa, UAE, India, Zambia, and Turkmenistan. Through our robust network and strategic partnerships, we bring cutting-edge solutions to these regions, addressing diverse market needs and industry challenges.
                     </motion.p>
                 </motion.section>
-                {/* <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-6 py-20 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 py-10 gap-6">
                     {jsonData.features.map((feature, index) => (
                         <motion.div
                             key={index}
@@ -109,27 +109,27 @@ const NetWork = () => {
                                     style={{ height: '150px', objectFit: 'cover' }}
                                 />
 
+                            </motion.div>
                                 <motion.div
-                                    initial={{ opacity: isSmallScreen ? 1 : 0, y: isSmallScreen ? 0 : 50 }}
-                                    whileHover={{ opacity: 1, y: 0 }}
+                                    // initial={{ opacity: isSmallScreen ? 1 : 0, y: isSmallScreen ? 0 : 50 }}
+                                    // whileHover={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.4 }}
-                                    className="absolute inset-0 bg-gradient-to-t from-customOrange/60 p-6 flex flex-col justify-center"
+                                    // className="absolute inset-0 bg-gradient-to-t from-customOrange/60 p-6 flex flex-col justify-center"
                                 >
                                     <motion.h3
                                         whileHover={{ scale: 1.1 }}
-                                        className="text-white text-lg sm:text-xl font-bold text-center"
+                                        className="text-dark text-lg sm:text-xl font-bold text-center"
                                     >
                                         {feature.properties.name}
                                     </motion.h3>
                                 </motion.div>
-                            </motion.div>
 
                             <motion.div
                                 className="h-0.5 bg-gradient-to-r from-transparent via-white/20 to-transparent mt-4 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
                             />
                         </motion.div>
                     ))}
-                </div> */}
+                </div>
 
                 {/* <div className="flex-1 grid grid-cols-2 grid-rows-2 gap-2 bg-purple-600 p-8">
                     {["Americas", "Asia Pacific", "Europe", "Middle East and Africa"].map(

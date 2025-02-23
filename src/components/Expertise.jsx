@@ -96,11 +96,7 @@ const Expertise = () => {
                                     className={`${service.gridClass}`}
                                     variants={itemAnimation}
                                 >
-                                    <GlowingCard
-                                        className={`${service.bgClass} h-full rounded-lg backdrop-blur-sm 
-                border border-white/10 hover:border-white/20 transition-all duration-500
-                group cursor-pointer overflow-hidden`}
-                                    >
+                                    <GlowingCard className={`${service.bgClass} h-full rounded-lg backdrop-blur-sm  border border-white/10 hover:border-white/20 transition-all duration-500  group cursor-pointer overflow-hidden`}>
                                         <div className="relative h-full p-6 flex flex-col">
                                             <motion.div
                                                 whileHover={{ scale: 1.2, rotate: 360 }}
@@ -208,7 +204,6 @@ const Expertise = () => {
                                 </motion.div>
                             </div>
                             <div className="grid md:grid-cols-2 gap-12 items-center py-20">
-
                                 <motion.div
                                     initial={{ opacity: 0, scale: 0.8 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
@@ -220,12 +215,7 @@ const Expertise = () => {
                                         whileHover={{ scale: 1.05 }}
                                         transition={{ duration: 0.3 }}
                                     >
-                                        <img
-                                            src={'https://th.bing.com/th/id/R.83c80af28f9375a651cfda98c98ecf95?rik=InNCUhpwC%2fOwUg&riu=http%3a%2f%2fwww.vikasdiagnostics.com%2fwp-content%2fuploads%2f2017%2f06%2fdigital-xray.png&ehk=DP8IlRBh7kJSGikLTx4niLlxyqHaQAYeLNHo%2fEEU%2bPk%3d&risl=&pid=ImgRaw&r=0'}
-                                            // src={Xrays}
-                                            alt="X ray"
-                                            className="w-full h-full object-cover"
-                                        />
+                                        <img src={'https://th.bing.com/th/id/R.83c80af28f9375a651cfda98c98ecf95?rik=InNCUhpwC%2fOwUg&riu=http%3a%2f%2fwww.vikasdiagnostics.com%2fwp-content%2fuploads%2f2017%2f06%2fdigital-xray.png&ehk=DP8IlRBh7kJSGikLTx4niLlxyqHaQAYeLNHo%2fEEU%2bPk%3d&risl=&pid=ImgRaw&r=0'}  alt="X ray"   className="w-full h-full object-cover" />
                                         <motion.div
                                             className="absolute inset-0 bg-gradient-to-t from-customOrange to-transparent opacity-1"
                                             whileHover={{ opacity: 0.6 }}
@@ -322,9 +312,7 @@ const Expertise = () => {
 
 
                                 </motion.div>
-
                             </div>
-
                         </section>
                     </div>
                 </div>
