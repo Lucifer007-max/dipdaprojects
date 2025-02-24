@@ -53,7 +53,7 @@ const GlobeComponent = () => {
       <Globe
         width={500} // Adjust width
         height={500} // Adjust height
-        globeImageUrl="https://unpkg.com/three-globe@2.41.12/example/img/earth-night.jpg"
+        globeImageUrl="https://unpkg.com/three-globe@2.41.12/example/img/earth-water.png"
         backgroundColor="#fff"
         labelsData={places}
         labelLat={(d) => d.properties.latitude}

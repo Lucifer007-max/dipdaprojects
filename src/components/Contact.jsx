@@ -12,7 +12,7 @@ const Contact = () => {
   ];
 
   const contactInfo = [
-    { icon: <FaMapMarkerAlt />, text: "Office - PO Box 214634, Dubai, United Arab Emirates" },
+    { icon: <FaMapMarkerAlt />, text: "Office - 211 KML Business Center, Al meydan Street Dubai, United Arab Emirates" },
     { icon: <FaPhone />, text: "+971-4-3382153" },
     { icon: <FaPhone />, text: "+971-567185064" },
     { icon: <FaEnvelope />, text: "info@geospectratech.com" },

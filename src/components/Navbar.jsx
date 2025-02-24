@@ -11,8 +11,9 @@ const navLinks = [
     title: "SERVICE",
     path: "service",
     children: [
-      { title: "PGNAA Service", path: "/service/pgnaa-service" },
-      { title: "X-Ray Service", path: "/service/xray-service" },
+      { title: "Process Analyzers", path: "/service/pgnaa-service" },
+      { title: "Lab Analyzers", path: "/service/xray-service" },
+      { title: "Radtion Service", path: "/service/xray-service" },
     ],
   },
   {
@@ -102,7 +103,7 @@ export default function WillstarNavbar() {
                       navigteByURL(link.path);
                     }
                   }}
-                  className="text-custom hover:text-dark text-md tracking-wider transition-colors cursor-pointer flex items-center"
+                  className="text-custom nav_custom hover:text-dark text-md tracking-wider transition-colors cursor-pointer flex items-center"
                   whileHover={{ y: -2 }}
                   whileTap={{ y: 0 }}
                 >
@@ -135,10 +136,10 @@ export default function WillstarNavbar() {
             ))}
 
             {/* Social Icons */}
-            <div className="flex items-center space-x-4 ml-8">
+            {/* <div className="flex items-center space-x-4 ml-8">
               <SocialIcon Icon={Instagram} />
               <SocialIcon Icon={Facebook} />
-            </div>
+            </div> */}
           </div>
 
           {/* Menu Toggle */}
@@ -247,10 +248,10 @@ export default function WillstarNavbar() {
             ))}
 
             {/* Social Icons */}
-            <div className="mt-auto flex space-x-6">
+            {/* <div className="mt-auto flex space-x-6">
               <SocialIcon Icon={Instagram} size={24} />
               <SocialIcon Icon={Facebook} size={24} />
-            </div>
+            </div> */}
           </div>
         </motion.div>
       )}

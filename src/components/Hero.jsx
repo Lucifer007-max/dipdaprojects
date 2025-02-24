@@ -65,7 +65,7 @@ const Hero = () => {
               style={{ objectFit: 'cover', background: "rgb(15 17 19)" }}
             /> */}
             <motion.img
-              src="https://www.in-housecnc.com/wp-content/uploads/2023/07/inhouse-cnc-blog-cnc-safety-e1689984072943.jpg"
+              src="https://www.tunnelindia.com/TunnelIndiaImages/KnowledgeImages/batching-plant-banner-2.jpg"
               className="w-full h-full object-cover  "
               alt="Logo"
               initial={{ scale: 1, x: 0 }} // Start at normal scale and position
@@ -119,7 +119,7 @@ const Hero = () => {
 
         {/* Content */}
         <div className="relative md:flex hidden z-10 h-full container mx-auto px-4  flex-col justify-center">
-          <div className="overflow-hidden">
+          <div className="overflow-hidden flex items-baseline">
             <motion.h1
               initial="initial"
               animate="animate"
@@ -136,6 +136,12 @@ const Hero = () => {
                 </motion.span>
               ))}
             </motion.h1>
+            <motion.h2 className="font-orbitron text-2xl mx-3 md:text-4xl font-bold text-light mb-8 flex flex-wrap" >GROUP</motion.h2>
+          </div>
+          <div className='flex '>
+
+            <motion.p className="mr-2 text-customOrange font-bold font-orbitron text-2xl">SPECTRA LINE</motion.p>
+            <motion.p className="mx-2 text-customOrange font-bold font-orbitron text-2xl">GEO SPECTRA</motion.p>
           </div>
 
           <motion.p

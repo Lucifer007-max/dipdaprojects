@@ -44,28 +44,6 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-12">
           {/* Top Section */}
           <div className="grid md:grid-cols-3 gap-12 mb-16 place-items-center">
-            {/* Logo & Info */}
-            {/* <div className="relative mb-10 text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                className="space-y-6 relative z-10"
-              >
-                {/* <img
-                  src="https://www.geospectratech.com/images/logo.png"
-                  alt="GeoSpectra Logo"
-                  className="mx-auto  drop-shadow-lg filter brightness-200"
-                  style={{ filter: "drop-shadow(rgb(255, 255, 255,0.9) 2px 0px 0px)" }}
-                /> */}
-
-                {/* <p className="font-outfit text-light-400 leading-relaxed">
-                  Creating exceptional digital experiences through innovative design and technology.
-                </p>
-              </motion.div> */}
-            {/* </div> 
-
-
-            {/* Quick Links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -95,7 +73,13 @@ const Footer = () => {
             >
               <h4 className="font-space-grotesk text-xl font-bold">Location</h4>
               <p className="">
-                GEOSPECTRA TECHNICAL SERVICES LLC PO Box 214634, <br /> Dubai, United Arab Emirates.
+                211 KML Business Center, Al meydan Street <br /> Dubai, United Arab Emirates
+              </p>
+              <p className="">
+                Spectraline Inustrial Equipment Trading LLC PO 11675   Dubai, United Arab Emirates
+              </p>
+              <p className="">
+                GeoSpectra Technical Services LLC PO 214634 <br /> Dubai United Arab Emirates
               </p>
             </motion.div>
 
