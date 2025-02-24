@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
 import { FaGithub, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
@@ -11,32 +10,6 @@ const Footer = () => {
     { icon: <FaLinkedin />, url: "#" },
     { icon: <FaInstagram />, url: "#" }
   ];
-
-  const [particles, setParticles] = useState([]);
-  const letters = "SPECTRA".split(""); // Split word into letters
-  const [showFullWord, setShowFullWord] = useState(false);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setShowFullWord(true);
-      setTimeout(() => setShowFullWord(false), 2000); // Hide full word after 2s
-    }, letters.length * 300 + 3000); // Restart animation loop
-
-    return () => clearInterval(interval);
-  }, []);
-  useEffect(() => {
-    // Create initial particles with random positions
-    const newParticles = Array.from({ length: 10 }).map(() => ({
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-    }));
-    setParticles(newParticles);
-  }, []);
-
-  const particleSize = 6;
-
-  const getLineCoordinates = (p1, p2) => {
-    return `M${p1.x},${p1.y} L${p2.x},${p2.y}`;
-  };
 
   return (
     <>
@@ -112,19 +85,6 @@ const Footer = () => {
         <p className="font-outfit text-light">
           © {currentYear} SPECTRA. All rights reserved.
         </p>
-
-        {/* <div className="flex space-x-6">
-            {socialLinks.map((social, index) => (
-              <motion.a
-                key={index}
-                href={social.url}
-                whileHover={{ scale: 1.2, color: '#fff' }}
-                className="text-xl text-gray-400 hover:text-primary transition-colors flex"
-              >
-                {social.icon}
-              </motion.a>
-            ))}
-          </div> */}
       </div>
     </>
   );

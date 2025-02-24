@@ -139,9 +139,8 @@ const Hero = () => {
             <motion.h2 className="font-orbitron text-2xl mx-3 md:text-4xl font-bold text-light mb-8 flex flex-wrap" >GROUP</motion.h2>
           </div>
           <div className='flex '>
-
-            <motion.p className="mr-2 text-customOrange font-bold font-orbitron text-2xl">SPECTRA LINE</motion.p>
-            <motion.p className="mx-2 text-customOrange font-bold font-orbitron text-2xl">GEO SPECTRA</motion.p>
+            <motion.p className="mr-2 text-customOrange font-bold font-orbitron text-2xl"><motion.a href="https://www.spectraline.ae/">SPECTRA LINE</motion.a></motion.p>
+            <motion.p className="mx-2 text-customOrange font-bold font-orbitron text-2xl"><motion.a href="https://www.geospectratech.com/">GEO SPECTRA</motion.a></motion.p>
           </div>
 
           <motion.p

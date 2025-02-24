@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 import Breadcrumb from './Breadcrumb/Breadcrumb';
-import contactBG from '../assets/images/backgrounds/contactBG.png'
+import contactBG from '../assets/images/backgrounds/contactBG.png';
 const Contact = () => {
   const [showPopup, setShowPopup] = useState(false);
   const formFields = [

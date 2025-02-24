@@ -3,7 +3,6 @@ import Breadcrumb from './Breadcrumb/Breadcrumb'
 import { motion, useAnimation, useInView, useSpring } from 'framer-motion'
 import { expertiesCards, Gammaexperties, Xraysexperties } from '../utils/data'
 import rays from '../assets/images/product/rays.webp'
-import Xrays from '../assets/images/product/xrayexperties.jpg'
 import { GlowingCard } from './card/GlowingCard'
 import { itemAnimation } from '../utils/animation'
 import mission from '../assets/images/backgrounds/experties.jpg';
